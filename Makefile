@@ -32,6 +32,7 @@ all: \
   check-ontology \
   check-shapes \
   check-supply-chain \
+  check-supply-chain-cdo-profile \
   check-supply-chain-pre-commit \
   check-supply-chain-submodules
 
@@ -148,9 +149,22 @@ check-shapes: \
 # This target's dependencies potentially modify the working directory's
 # Git state, so it is intentionally not a dependency of check.
 check-supply-chain: \
+  check-supply-chain-cdo-profile \
   check-mypy \
   check-supply-chain-pre-commit \
   check-supply-chain-submodules
+
+check-supply-chain-cdo-profile:
+	git remote add \
+	  _CHECK_SUPPLY_CHAIN_upstream \
+	  https://github.com/ucoProject/UCO-Profile-Example.git
+	git fetch \
+	  _CHECK_SUPPLY_CHAIN_upstream
+	test \
+	  "x$$(git merge-base _CHECK_SUPPLY_CHAIN_upstream/base HEAD)" \
+	  == \
+	  "x$$(git rev-parse _CHECK_SUPPLY_CHAIN_upstream/base)" \
+	  || (echo "ERROR:Makefile:The current branch is behind the upstream 'base' branch.  Please merge the upstream 'base' commit into the current branch." >&2 ; exit 1)
 
 check-supply-chain-pre-commit: \
   .venv-pre-commit/var/.pre-commit-built.log
