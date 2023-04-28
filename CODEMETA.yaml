@@ -31,14 +31,12 @@
 categories:
   # - ai-ml
   # - performance-and-workflow
-  - scientific-software
+  # - scientific-software
   # - simulation
-  # - tools
+  - tools
   # - visualization
 
 themes:
-  - Information Technology
-    - Data and informatics
   # - Advanced communications
   #     - Optical communications
   #     - Quantum communications
@@ -111,9 +109,9 @@ themes:
   #     - Structural fire resistance
   #     - Wildland-Urban interface fire
   #
-  # - Forensic Science
+  - Forensic Science
   #     - Ballistics
-  #     - Digital evidence
+      - Digital evidence
   #     - DNA and biological evidence
   #     - Drugs and toxicology
   #     - Fingerprints and pattern evidence
@@ -128,7 +126,7 @@ themes:
   #     - Precision medicine
   #     - Regenerative medicine
   #
-  # - Information Technology
+  - Information Technology
   #     - Artificial intelligence
   #     - Biometrics
   #     - Cloud computing and virtualization
@@ -137,7 +135,7 @@ themes:
   #     - Conformance testing
   #     - Cyber-physical systems
   #         - Smart cities
-  #     - Cybersecurity
+      - Cybersecurity
   #         - Configuration and vulnerability management
   #         - Cryptography
   #         - Cybersecurity Education and Workforce Development
@@ -151,7 +149,7 @@ themes:
   #     - Health IT
   #     - Identity and access management
   #     - Internet of Things (IoT)
-  #     - Interoperability testing
+      - Interoperability testing
   #     - Mobile
   #     - Networking
   #         - Mobile and Wireless Networking
@@ -163,7 +161,7 @@ themes:
   #         - Protocol Design and Standardization
   #         - Software-defined and virtual networks
   #     - Privacy
-  #     - Software research
+      - Software research
   #         - Software assurance
   #         - Software performance
   #         - Software testing
@@ -216,10 +214,10 @@ themes:
   #     - Polymers
   #     - Superconductors
   #
-  # - Mathematics and Statistics
+  - Mathematics and Statistics
   #     - Experiment design
   #     - Image and signal processing
-  #     - Mathematical knowledge management
+      - Mathematical knowledge management
   #     - Modeling and simulation research
   #     - Numerical methods and software
   #     - Statistical analysis
@@ -300,16 +298,16 @@ themes:
   #     - Resilient materials
   #     - Windstorm impact reduction
   #
-  # - Standards
+  - Standards
   #     - Accreditation
   #     - Calibration Services
-  #     - Conformity assessment
+      - Conformity assessment
   #     - Documentary standards
   #     - Frameworks
   #     - Reference data
   #     - Reference instruments
   #     - Reference materials
-  #     - Standards education
+      - Standards education
   #
   # - Transportation
   #     - Aerospace
