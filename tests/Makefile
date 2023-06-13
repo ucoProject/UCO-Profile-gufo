@@ -20,8 +20,6 @@ top_srcdir := $(shell cd .. ; pwd)
 
 uco_srcdir := $(top_srcdir)/dependencies/UCO
 
-RDF_TOOLKIT_JAR := $(uco_srcdir)/lib/rdf-toolkit.jar
-
 profile_ttls := $(wildcard $(top_srcdir)/ontology/uco-*.ttl)
 
 shape_ttls := $(wildcard $(top_srcdir)/shapes/sh-*.ttl)
@@ -58,7 +56,6 @@ clean:
 	  monolithic.ttl
 
 monolithic.ttl: \
-  $(RDF_TOOLKIT_JAR) \
   $(top_srcdir)/.venv.done.log \
   $(top_srcdir)/dependencies/imports-transitive.ttl \
   $(profile_ttls) \
