@@ -19,19 +19,43 @@
 		;
 	.
 
+drafting:Endurant
+	a owl:Class ;
+	rdfs:subClassOf
+		gufo:Endurant ,
+		uco-core:UcoObject
+		;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
+	.
+
+drafting:Perdurant
+	a owl:Class ;
+	rdfs:subClassOf
+		gufo:Event ,
+		uco-core:UcoObject
+		;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
+	.
+
 uco-action:Action
-	rdfs:subClassOf gufo:Event ;
+	rdfs:subClassOf drafting:Perdurant ;
 	.
 
 uco-core:Event
-	rdfs:subClassOf gufo:Event ;
+	rdfs:subClassOf drafting:Perdurant ;
 	.
 
 uco-identity:Organization
-	rdfs:subClassOf gufo:Object ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
 	.
 
 uco-identity:Person
-	rdfs:subClassOf gufo:Object ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
 	.
 
