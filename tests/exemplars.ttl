@@ -8,6 +8,8 @@
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
+@prefix uco-vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.org/kb>
@@ -22,6 +24,12 @@ kb:Action-13c91d40-9ca0-4558-81a1-4f7db888c371
 
 kb:Event-03a1a1db-0579-4427-9a51-448c32281146
 	a uco-core:Event ;
+	.
+
+kb:Hash-4c3d0623-d365-4c69-a1a1-01523c6502fa
+	a uco-types:Hash ;
+	uco-types:hashMethod "SHA1"^^uco-vocabulary:HashNameVocab ;
+	uco-types:hashValue "da39a3ee5e6b4b0d3255bfef95601890afd80709"^^xsd:hexBinary ;
 	.
 
 kb:Organization-3b542161-47e1-40cd-a1b1-e1b9d07af81f
