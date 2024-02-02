@@ -9,6 +9,7 @@
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.org/ontology/uco-gufo>
@@ -33,5 +34,9 @@ uco-identity:Organization
 
 uco-identity:Person
 	rdfs:subClassOf gufo:Object ;
+	.
+
+uco-types:Hash
+	rdfs:subClassOf gufo:AbstractIndividual ;
 	.
 
