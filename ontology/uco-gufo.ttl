@@ -24,7 +24,7 @@ drafting:Endurant
 	a owl:Class ;
 	rdfs:subClassOf
 		gufo:Endurant ,
-		uco-core:UcoObject
+		uco-core:UcoThing
 		;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
 	.
@@ -38,12 +38,29 @@ drafting:Perdurant
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
 	.
 
+drafting:Quality
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Quality ,
+		uco-core:UcoInherentCharacterizationThing
+		;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/535> ;
+	.
+
 uco-action:Action
 	rdfs:subClassOf drafting:Perdurant ;
 	.
 
 uco-core:Event
 	rdfs:subClassOf drafting:Perdurant ;
+	.
+
+uco-core:Item
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
 	.
 
 uco-identity:Organization
