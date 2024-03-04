@@ -77,6 +77,20 @@ uco-core:Item
 		;
 	.
 
+uco-core:endTime
+	rdfs:seeAlso
+		gufo:hasEndPoint ,
+		gufo:hasEndPointInXSDDateTimeStamp
+		;
+	.
+
+uco-core:startTime
+	rdfs:seeAlso
+		gufo:hasBeginPoint ,
+		gufo:hasBeginPointInXSDDateTimeStamp
+		;
+	.
+
 uco-identity:Organization
 	rdfs:subClassOf
 		drafting:Endurant ,
