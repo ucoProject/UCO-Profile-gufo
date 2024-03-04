@@ -52,6 +52,20 @@ uco-action:Action
 	rdfs:subClassOf drafting:Perdurant ;
 	.
 
+uco-action:endTime
+	rdfs:seeAlso
+		gufo:hasEndPoint ,
+		gufo:hasEndPointInXSDDateTimeStamp
+		;
+	.
+
+uco-action:startTime
+	rdfs:seeAlso
+		gufo:hasBeginPoint ,
+		gufo:hasBeginPointInXSDDateTimeStamp
+		;
+	.
+
 uco-core:Event
 	rdfs:subClassOf drafting:Perdurant ;
 	.
