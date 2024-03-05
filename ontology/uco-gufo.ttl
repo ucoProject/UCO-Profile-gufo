@@ -91,7 +91,12 @@ uco-core:startTime
 		;
 	.
 
+uco-identity:Identity
+	a gufo:Category ;
+	.
+
 uco-identity:Organization
+	a gufo:Kind ;
 	rdfs:subClassOf
 		drafting:Endurant ,
 		gufo:Object
@@ -99,6 +104,7 @@ uco-identity:Organization
 	.
 
 uco-identity:Person
+	a gufo:Kind ;
 	rdfs:subClassOf
 		drafting:Endurant ,
 		gufo:Object
