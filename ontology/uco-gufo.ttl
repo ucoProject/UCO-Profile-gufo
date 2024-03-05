@@ -9,6 +9,7 @@
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -18,6 +19,15 @@
 		<http://purl.org/nemo/gufo#/1.0.0> ,
 		<https://ontology.unifiedcyberontology.org/uco/uco/1.3.0>
 		;
+	.
+
+drafting:Bearing
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf drafting:Quality ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
 drafting:Endurant
@@ -46,6 +56,21 @@ drafting:Quality
 		uco-core:UcoInherentCharacterizationThing
 		;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/535> ;
+	.
+
+drafting:Vehicle
+	a owl:Class ;
+	rdfs:subClassOf uco-observable:Device ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
+	.
+
+drafting:Velocity
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf drafting:Quality ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
 uco-action:Action
