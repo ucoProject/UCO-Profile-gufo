@@ -9,6 +9,7 @@
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
@@ -29,6 +30,32 @@ drafting:Endurant
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
 	.
 
+drafting:FacetType
+	a owl:Class ;
+	rdfs:subClassOf
+		gufo:EndurantType ,
+		owl:Thing
+		;
+	rdfs:comment "Note: This is not a subclass of uco-core:UcoThing due in part to entailed imposition of an IRI form that does not seem appropriate in this situation."@en ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/595> ;
+	owl:disjointUnionOf (
+		drafting:GeneralFacetType
+		drafting:SpecificFacetType
+	) ;
+	owl:disjointWith
+		uco-core:UcoInherentCharacterizationThing ,
+		uco-core:UcoObject
+		;
+	.
+
+drafting:GeneralFacetType
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:FacetType ,
+		gufo:Category
+		;
+	.
+
 drafting:Perdurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -46,6 +73,14 @@ drafting:Quality
 		uco-core:UcoInherentCharacterizationThing
 		;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/535> ;
+	.
+
+drafting:SpecificFacetType
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:FacetType ,
+		gufo:Kind
+		;
 	.
 
 uco-action:Action
@@ -103,6 +138,14 @@ uco-identity:Person
 		drafting:Endurant ,
 		gufo:Object
 		;
+	.
+
+uco-observable:BluetoothAddressFacet
+	a drafting:SpecificFacetType ;
+	.
+
+uco-observable:MACAddressFacet
+	a drafting:GeneralFacetType ;
 	.
 
 uco-types:Hash

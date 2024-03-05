@@ -28,6 +28,18 @@ kb:Action-13c91d40-9ca0-4558-81a1-4f7db888c371
 	gufo:hasEndPointInXSDDateTimeStamp "2021-02-03T04:05:06Z"^^xsd:dateTimeStamp ;
 	.
 
+kb:BluetoothAddress-53c6bc31-4f9c-4ca7-96cb-c9c61d7e4ca2
+	a uco-observable:BluetoothAddress ;
+	uco-core:hasFacet
+		kb:BluetoothAddressFacet-717b8cce-e9c2-4d59-81e4-1747d7e2d8ee ,
+		kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
+		;
+	.
+
+kb:BluetoothAddressFacet-717b8cce-e9c2-4d59-81e4-1747d7e2d8ee
+	a uco-observable:BluetoothAddressFacet ;
+	.
+
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
 	.
@@ -53,6 +65,10 @@ kb:Hash-4c3d0623-d365-4c69-a1a1-01523c6502fa
 		;
 	uco-types:hashMethod "SHA1"^^uco-vocabulary:HashNameVocab ;
 	uco-types:hashValue "da39a3ee5e6b4b0d3255bfef95601890afd80709"^^xsd:hexBinary ;
+	.
+
+kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
+	a uco-observable:MACAddressFacet ;
 	.
 
 kb:Organization-3b542161-47e1-40cd-a1b1-e1b9d07af81f
