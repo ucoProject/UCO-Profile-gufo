@@ -26,7 +26,15 @@ drafting:Bearing
 		gufo:Kind ,
 		owl:Class
 		;
-	rdfs:subClassOf drafting:Quality ;
+	rdfs:subClassOf
+		drafting:Quality ,
+		[
+			a owl:Restriction ;
+			rdfs:comment "This restriction is more suited for any gUFO Object + UCO Object with a physical projection, but such a class is not defined yet in gUFO or UCO."@en ;
+			owl:onProperty gufo:inheresIn ;
+			owl:allValuesFrom uco-observable:Device ;
+		]
+		;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
@@ -69,7 +77,15 @@ drafting:Velocity
 		gufo:Kind ,
 		owl:Class
 		;
-	rdfs:subClassOf drafting:Quality ;
+	rdfs:subClassOf
+		drafting:Quality ,
+		[
+			a owl:Restriction ;
+			rdfs:comment "This restriction is more suited for any gUFO Object + UCO Object with a physical projection, but such a class is not defined yet in gUFO or UCO."@en ;
+			owl:onProperty gufo:inheresIn ;
+			owl:allValuesFrom uco-observable:Device ;
+		]
+		;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
@@ -124,6 +140,13 @@ uco-identity:Organization
 	.
 
 uco-identity:Person
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
+	.
+
+uco-observable:Device
 	rdfs:subClassOf
 		drafting:Endurant ,
 		gufo:Object
