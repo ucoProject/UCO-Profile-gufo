@@ -156,7 +156,7 @@ uco-core:Event
 	.
 
 uco-core:Facet
-	a gufo:Category ;
+	a drafting:GeneralFacetType ;
 	rdfs:subClassOf gufo:IntrinsicMode ;
 	.
 
