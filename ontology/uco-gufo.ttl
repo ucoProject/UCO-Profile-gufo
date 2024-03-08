@@ -54,7 +54,10 @@ drafting:FacetType
 		owl:Thing
 		;
 	rdfs:comment "Note: This is not a subclass of uco-core:UcoThing due in part to entailed imposition of an IRI form that does not seem appropriate in this situation.  If this were a subclass of UcoThing, then FacetType would trigger a SHACL info-severity validation result, visible to end-users on every SHACL run, because the IRI '...FacetType' does not end with a UUID."@en ;
-	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/595> ;
+	rdfs:seeAlso
+		<https://github.com/ucoProject/UCO/issues/430> ,
+		<https://github.com/ucoProject/UCO/issues/595>
+		;
 	owl:disjointUnionOf (
 		drafting:GeneralFacetType
 		drafting:SpecificFacetType
