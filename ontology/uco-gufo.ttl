@@ -21,6 +21,23 @@
 		;
 	.
 
+drafting:Bearing
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		drafting:Quality ,
+		[
+			a owl:Restriction ;
+			rdfs:comment "This restriction is more suited for any gUFO Object + UCO Object with a physical projection, but such a class is not defined yet in gUFO or UCO."@en ;
+			owl:onProperty gufo:inheresIn ;
+			owl:allValuesFrom uco-observable:Device ;
+		]
+		;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
+	.
+
 drafting:Endurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -83,6 +100,29 @@ drafting:SpecificFacetType
 		;
 	.
 
+drafting:Vehicle
+	a owl:Class ;
+	rdfs:subClassOf uco-observable:Device ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
+	.
+
+drafting:Velocity
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		drafting:Quality ,
+		[
+			a owl:Restriction ;
+			rdfs:comment "This restriction is more suited for any gUFO Object + UCO Object with a physical projection, but such a class is not defined yet in gUFO or UCO."@en ;
+			owl:onProperty gufo:inheresIn ;
+			owl:allValuesFrom uco-observable:Device ;
+		]
+		;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
+	.
+
 uco-action:Action
 	rdfs:subClassOf drafting:Perdurant ;
 	.
@@ -142,6 +182,13 @@ uco-identity:Person
 
 uco-observable:BluetoothAddressFacet
 	a drafting:SpecificFacetType ;
+	.
+
+uco-observable:Device
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
 	.
 
 uco-observable:MACAddressFacet

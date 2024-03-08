@@ -1,7 +1,7 @@
 #!/usr/bin/make -f
 
-# Portions of this file contributed by NIST are governed by the
-# following statement:
+# Portions of this file contributed by NIST are governed by the following
+# statement:
 #
 # This software was developed at the National Institute of Standards
 # and Technology by employees of the Federal Government in the course
@@ -22,7 +22,7 @@ uco_srcdir := $(top_srcdir)/dependencies/UCO
 
 RDF_TOOLKIT_JAR := $(uco_srcdir)/lib/rdf-toolkit.jar
 
-ttl_basenames := $(wildcard uco-*.ttl)
+ttl_basenames := $(wildcard sh-*.ttl)
 
 check_ttl_targets := $(foreach ttl_basename,$(ttl_basenames),check-$(ttl_basename))
 
@@ -36,8 +36,8 @@ all: \
   .check-%.ttl
 
 $(RDF_TOOLKIT_JAR):
-	@echo "DEBUG:ontology/Makefile:top_srcdir=$(top_srcdir)" >&2
-	@echo "ERROR:ontology/Makefile:rdf-toolkit.jar not found.  Did you run `make` from the top source directory?" >&2
+	@echo "DEBUG:shapes/Makefile:top_srcdir=$(top_srcdir)" >&2
+	@echo "ERROR:shapes/Makefile:rdf-toolkit.jar not found.  Did you run `make` from the top source directory?" >&2
 	@test -r $@
 
 .check-%.ttl: \
@@ -76,7 +76,7 @@ check-%.ttl: \
   %.ttl \
   .check-%.ttl
 	diff $^	\
-	  || (echo "ERROR:ontology/Makefile:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp .check-$< $<' while in the sub-folder ontology/ to get a file ready to commit to Git." >&2 ; exit 1)
+	  || (echo "ERROR:shapes/Makefile:The local $< does not match the normalized version. If the above reported changes look fine, run 'cp .check-$< $<' while in the sub-folder shapes/ to get a file ready to commit to Git." >&2 ; exit 1)
 
 clean:
 	@rm -f \
