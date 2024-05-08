@@ -47,6 +47,35 @@ drafting:Endurant
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
 	.
 
+drafting:FacetType
+	a owl:Class ;
+	rdfs:subClassOf
+		gufo:EndurantType ,
+		owl:Thing
+		;
+	rdfs:comment "Note: This is not a subclass of uco-core:UcoThing due in part to entailed imposition of an IRI form that does not seem appropriate in this situation.  If this were a subclass of UcoThing, then FacetType would trigger a SHACL info-severity validation result, visible to end-users on every SHACL run, because the IRI '...FacetType' does not end with a UUID."@en ;
+	rdfs:seeAlso
+		<https://github.com/ucoProject/UCO/issues/430> ,
+		<https://github.com/ucoProject/UCO/issues/595>
+		;
+	owl:disjointUnionOf (
+		drafting:GeneralFacetType
+		drafting:SpecificFacetType
+	) ;
+	owl:disjointWith
+		uco-core:UcoInherentCharacterizationThing ,
+		uco-core:UcoObject
+		;
+	.
+
+drafting:GeneralFacetType
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:FacetType ,
+		gufo:Category
+		;
+	.
+
 drafting:Perdurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -64,6 +93,14 @@ drafting:Quality
 		uco-core:UcoInherentCharacterizationThing
 		;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/535> ;
+	.
+
+drafting:SpecificFacetType
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:FacetType ,
+		gufo:Kind
+		;
 	.
 
 drafting:Vehicle
@@ -89,6 +126,13 @@ drafting:Velocity
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
+drafting:isBearerOf
+	a owl:ObjectProperty ;
+	rdfs:domain gufo:ConcreteIndividual ;
+	rdfs:range gufo:Aspect ;
+	owl:inverseOf gufo:inheresIn ;
+	.
+
 uco-action:Action
 	rdfs:subClassOf drafting:Perdurant ;
 	.
@@ -111,6 +155,11 @@ uco-core:Event
 	rdfs:subClassOf drafting:Perdurant ;
 	.
 
+uco-core:Facet
+	a drafting:GeneralFacetType ;
+	rdfs:subClassOf gufo:IntrinsicMode ;
+	.
+
 uco-core:Item
 	rdfs:subClassOf
 		drafting:Endurant ,
@@ -123,6 +172,10 @@ uco-core:endTime
 		gufo:hasEndPoint ,
 		gufo:hasEndPointInXSDDateTimeStamp
 		;
+	.
+
+uco-core:hasFacet
+	rdfs:subPropertyOf drafting:isBearerOf ;
 	.
 
 uco-core:startTime
@@ -152,6 +205,10 @@ uco-identity:Person
 		;
 	.
 
+uco-observable:BluetoothAddressFacet
+	a drafting:SpecificFacetType ;
+	.
+
 uco-observable:Device
 	rdfs:subClassOf
 		drafting:Endurant ,
@@ -159,7 +216,22 @@ uco-observable:Device
 		;
 	.
 
+uco-observable:MACAddressFacet
+	a drafting:GeneralFacetType ;
+	.
+
 uco-types:Hash
 	rdfs:subClassOf gufo:AbstractIndividual ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment
+		"This specialization stems from a Facet currently being understood to be an intrinsic mode that is not measurable.  Were it measurable, a Facet would be a Quality."@en ,
+		"This specialization will raise some disussion pertaining to core:ConfidenceFacet.  If a ConfidenceFacet is measurable, then it is a specialization of gufo:Quality, and Facet should instead be a subclass of IntrinsicAspect."@en
+		;
+	owl:annotatedObject gufo:IntrinsicMode ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSubject uco-core:Facet ;
 	.
 

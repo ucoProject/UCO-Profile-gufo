@@ -29,13 +29,30 @@ kb:Action-13c91d40-9ca0-4558-81a1-4f7db888c371
 	gufo:hasEndPointInXSDDateTimeStamp "2021-02-03T04:05:06Z"^^xsd:dateTimeStamp ;
 	.
 
+kb:BluetoothAddress-53c6bc31-4f9c-4ca7-96cb-c9c61d7e4ca2
+	a uco-observable:BluetoothAddress ;
+	uco-core:hasFacet
+		kb:BluetoothAddressFacet-717b8cce-e9c2-4d59-81e4-1747d7e2d8ee ,
+		kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
+		;
+	.
+
 kb:Bearing-74c2bb20-1e4f-40ac-807e-bc2c528e39da
 	a drafting:Bearing ;
 	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
 	.
 
+kb:BluetoothAddressFacet-717b8cce-e9c2-4d59-81e4-1747d7e2d8ee
+	a uco-observable:BluetoothAddressFacet ;
+	.
+
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
+	uco-core:hasFacet kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628 ;
+	.
+
+kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
+	a uco-observable:ContentDataFacet ;
 	.
 
 kb:Event-03a1a1db-0579-4427-9a51-448c32281146
@@ -73,6 +90,10 @@ kb:Interval-336d4db4-727e-4694-8bf0-5902c6ae504f
 	time:hasBeginning kb:Instant-24d2c5f3-d194-4db9-972a-9472c267d047 ;
 	time:hasEnd kb:Instant-c9ae3fce-ddcb-416b-971b-559c2f5bee95 ;
 	time:inside kb:Instant-2918592a-9d87-4b30-acbc-521a19f97fcd ;
+	.
+
+kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
+	a uco-observable:MACAddressFacet ;
 	.
 
 kb:Organization-3b542161-47e1-40cd-a1b1-e1b9d07af81f
