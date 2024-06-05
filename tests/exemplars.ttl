@@ -10,6 +10,7 @@
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix uco-vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
@@ -90,6 +91,10 @@ kb:Interval-336d4db4-727e-4694-8bf0-5902c6ae504f
 	time:hasBeginning kb:Instant-24d2c5f3-d194-4db9-972a-9472c267d047 ;
 	time:hasEnd kb:Instant-c9ae3fce-ddcb-416b-971b-559c2f5bee95 ;
 	time:inside kb:Instant-2918592a-9d87-4b30-acbc-521a19f97fcd ;
+	.
+
+kb:Location-c39f5c70-ba6d-44a1-8c6c-426b0372eade
+	a uco-location:Location ;
 	.
 
 kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
