@@ -167,6 +167,13 @@ uco-core:Item
 		;
 	.
 
+uco-core:Relationship
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
+	.
+
 uco-core:endTime
 	rdfs:seeAlso
 		gufo:hasEndPoint ,
@@ -233,5 +240,39 @@ uco-types:Hash
 	owl:annotatedObject gufo:IntrinsicMode ;
 	owl:annotatedProperty rdfs:subClassOf ;
 	owl:annotatedSubject uco-core:Facet ;
+	.
+
+[]
+	a owl:NegativePropertyAssertion ;
+	rdfs:comment "If this specialization were introduced, a further specialization would be suggested for gufo:mediates.  A demonstration exists among the CASE examples that is incompatible: A Relationship, 'Mapped_Into', that relates two Actions together to demonstrate a lifecycle phase."@en ;
+	rdfs:seeAlso
+		<http://example.org/kb/lifecycle_phase-60a55e96-d39e-487e-9b39-3ba96e1ffc7a> ,
+		<https://github.com/casework/CASE-Examples/tree/dc6f6b901289c1684fd88e25e9bcec925974d155/examples/illustrations/forensic_lifecycle> ,
+		[
+			a owl:NegativePropertyAssertion ;
+			rdfs:comment "gufo:mediates has range gufo:Endurant, but a uco-core:Relationship is permitted to link any UcoObject, including perdurants."@en ;
+			rdfs:seeAlso
+				<http://example.org/kb/lifecycle_phase-60a55e96-d39e-487e-9b39-3ba96e1ffc7a> ,
+				<https://github.com/casework/CASE-Examples/tree/dc6f6b901289c1684fd88e25e9bcec925974d155/examples/illustrations/forensic_lifecycle>
+				;
+			owl:assertionProperty rdfs:subPropertyOf ;
+			owl:sourceInvididual uco-core:source ;
+			owl:targetInvididual gufo:mediates ;
+		] ,
+		[
+			a owl:NegativePropertyAssertion ;
+			rdfs:comment "gufo:mediates has range gufo:Endurant, but a uco-core:Relationship is permitted to link any UcoObject, including perdurants."@en ;
+			rdfs:seeAlso
+				<http://example.org/kb/lifecycle_phase-60a55e96-d39e-487e-9b39-3ba96e1ffc7a> ,
+				<https://github.com/casework/CASE-Examples/tree/dc6f6b901289c1684fd88e25e9bcec925974d155/examples/illustrations/forensic_lifecycle>
+				;
+			owl:assertionProperty rdfs:subPropertyOf ;
+			owl:sourceInvididual uco-core:target ;
+			owl:targetInvididual gufo:mediates ;
+		]
+		;
+	owl:assertionProperty rdfs:subClassOf ;
+	owl:sourceInvididual uco-core:Relationship ;
+	owl:targetInvididual gufo:Relator ;
 	.
 

@@ -46,9 +46,17 @@ kb:BluetoothAddressFacet-717b8cce-e9c2-4d59-81e4-1747d7e2d8ee
 	a uco-observable:BluetoothAddressFacet ;
 	.
 
+kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f
+	a uco-observable:ContentData ;
+	.
+
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
 	uco-core:hasFacet kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628 ;
+	.
+
+kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec
+	a uco-observable:ContentData ;
 	.
 
 kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
@@ -124,6 +132,14 @@ kb:QualityValueAttributionSituation-872b7dd1-b49a-4278-bfdf-df507493d63f
 	gufo:concernsQualityValue "50 km/h" ;
 	gufo:hasBeginPoint kb:Instant-24d2c5f3-d194-4db9-972a-9472c267d047 ;
 	gufo:hasEndPoint kb:Instant-c9ae3fce-ddcb-416b-971b-559c2f5bee95 ;
+	.
+
+kb:Relationship-2be6b54a-a051-499c-9dcd-63d17d813293
+	a uco-core:Relationship ;
+	uco-core:isDirectional "true"^^xsd:boolean ;
+	uco-core:kindOfRelationship "Contained_Within" ;
+	uco-core:source kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f ;
+	uco-core:target kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec ;
 	.
 
 kb:Velocity-62bc6232-b570-45d7-b382-d4e0a36fceb9
