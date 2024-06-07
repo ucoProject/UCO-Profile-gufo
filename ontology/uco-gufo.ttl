@@ -38,6 +38,24 @@ drafting:Bearing
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
+drafting:Compiler
+	a owl:Class ;
+	rdfs:subClassOf
+		gufo:FunctionalComplex ,
+		uco-observable:Software
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:DeploymentScript
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf drafting:Script ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
 drafting:Endurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -76,6 +94,24 @@ drafting:GeneralFacetType
 		;
 	.
 
+drafting:LinuxTask
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf drafting:Task ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:Package
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Software ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
 drafting:Perdurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -95,12 +131,59 @@ drafting:Quality
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/535> ;
 	.
 
+drafting:Script
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Software ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:Service
+	a
+		gufo:Category ,
+		owl:Class
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:ServicePack
+	a owl:Class ;
+	rdfs:subClassOf
+		gufo:FunctionalComplex ,
+		uco-observable:Software
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:SoftwareBuild
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		gufo:FunctionalComplex ,
+		uco-observable:Software
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
 drafting:SpecificFacetType
 	a owl:Class ;
 	rdfs:subClassOf
 		drafting:FacetType ,
 		gufo:Kind
 		;
+	.
+
+drafting:Task
+	a
+		gufo:Category ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Process ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
 	.
 
 drafting:Vehicle
@@ -218,6 +301,23 @@ uco-observable:Device
 
 uco-observable:MACAddressFacet
 	a drafting:GeneralFacetType ;
+	.
+
+uco-observable:Process
+	a gufo:Category ;
+	.
+
+uco-observable:Software
+	a gufo:Category ;
+	.
+
+uco-observable:WindowsService
+	a gufo:Kind ;
+	.
+
+uco-observable:WindowsTask
+	a gufo:Kind ;
+	rdfs:subClassOf drafting:Task ;
 	.
 
 uco-types:Hash

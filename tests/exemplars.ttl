@@ -46,6 +46,10 @@ kb:BluetoothAddressFacet-717b8cce-e9c2-4d59-81e4-1747d7e2d8ee
 	a uco-observable:BluetoothAddressFacet ;
 	.
 
+kb:Compiler-7ae00fea-f392-4da5-9b07-ea0ee12e27ed
+	a drafting:Compiler ;
+	.
+
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
 	uco-core:hasFacet kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628 ;
@@ -53,6 +57,10 @@ kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 
 kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
 	a uco-observable:ContentDataFacet ;
+	.
+
+kb:DeploymentScript-6a4ce3a2-afbe-4680-9609-3b68af8965ff
+	a drafting:DeploymentScript ;
 	.
 
 kb:Event-03a1a1db-0579-4427-9a51-448c32281146
@@ -92,12 +100,20 @@ kb:Interval-336d4db4-727e-4694-8bf0-5902c6ae504f
 	time:inside kb:Instant-2918592a-9d87-4b30-acbc-521a19f97fcd ;
 	.
 
+kb:LinuxTask-45f8dd65-afee-4f48-8d4c-886b5d53cfa3
+	a drafting:LinuxTask ;
+	.
+
 kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
 	a uco-observable:MACAddressFacet ;
 	.
 
 kb:Organization-3b542161-47e1-40cd-a1b1-e1b9d07af81f
 	a uco-identity:Organization ;
+	.
+
+kb:Package-ed1cf421-2ecc-43d8-a1b8-daaec4f8021b
+	a drafting:Package ;
 	.
 
 kb:Person-0c9728af-7f52-400e-9861-72cd11f6966a
@@ -126,6 +142,14 @@ kb:QualityValueAttributionSituation-872b7dd1-b49a-4278-bfdf-df507493d63f
 	gufo:hasEndPoint kb:Instant-c9ae3fce-ddcb-416b-971b-559c2f5bee95 ;
 	.
 
+kb:ServicePack-fbdc96ef-b634-4869-8cd6-b23d31ff5b18
+	a drafting:ServicePack ;
+	.
+
+kb:SoftwareBuild-35bf4562-2539-4c7f-a4f5-95865c6f81fa
+	a drafting:SoftwareBuild ;
+	.
+
 kb:Velocity-62bc6232-b570-45d7-b382-d4e0a36fceb9
 	a drafting:Velocity ;
 	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
@@ -137,5 +161,9 @@ kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc
 		kb:QualityValueAttributionSituation-3ec99074-3cd1-4d24-a2c0-2339850ab9d2 ,
 		kb:QualityValueAttributionSituation-872b7dd1-b49a-4278-bfdf-df507493d63f
 		;
+	.
+
+kb:WindowsTask-1148ebc4-750b-43f8-a17d-6ba239f62ae7
+	a uco-observable:WindowsTask ;
 	.
 
