@@ -7,6 +7,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
@@ -234,6 +235,18 @@ uco-action:startTime
 		;
 	.
 
+uco-analysis:AnalyticResult
+	a gufo:SubKind ;
+	.
+
+uco-core:Assertion
+	a gufo:Kind ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
+	.
+
 uco-core:Event
 	rdfs:subClassOf drafting:Perdurant ;
 	.
@@ -333,5 +346,17 @@ uco-types:Hash
 	owl:annotatedObject gufo:IntrinsicMode ;
 	owl:annotatedProperty rdfs:subClassOf ;
 	owl:annotatedSubject uco-core:Facet ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:seeAlso
+		<http://example.org/kb/AnalyticResult-14641bfa-ef39-4394-a8ae-d0f57a2d637a> ,
+		<https://github.com/casework/CASE-Examples/tree/dc6f6b901289c1684fd88e25e9bcec925974d155/examples/illustrations/partitions> ,
+		uco-analysis:AnalyticResult
+		;
+	owl:annotatedObject gufo:Object ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSubject uco-core:Assertion ;
 	.
 
