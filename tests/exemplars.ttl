@@ -8,6 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
@@ -28,6 +29,10 @@ kb:Action-13c91d40-9ca0-4558-81a1-4f7db888c371
 	uco-action:startTime "2020-01-02T03:04:05Z"^^xsd:dateTime ;
 	gufo:hasBeginPointInXSDDateTimeStamp "2020-01-02T03:04:05Z"^^xsd:dateTimeStamp ;
 	gufo:hasEndPointInXSDDateTimeStamp "2021-02-03T04:05:06Z"^^xsd:dateTimeStamp ;
+	.
+
+kb:AnalyticResult-34fb92db-d576-45a7-9d62-dae04510968f
+	a uco-analysis:AnalyticResult ;
 	.
 
 kb:BluetoothAddress-53c6bc31-4f9c-4ca7-96cb-c9c61d7e4ca2
