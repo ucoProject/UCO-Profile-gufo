@@ -8,6 +8,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
+@prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
@@ -36,6 +37,10 @@ kb:AlternateDataStream-e6ceee40-5614-4740-b08c-d21ce9b2356d
 		;
 	rdfs:comment "TODO - The assignment of FileSystemObject is only necessary until UCO Issue 590 is incorporated."@en ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/590> ;
+	.
+
+kb:AnalyticResult-34fb92db-d576-45a7-9d62-dae04510968f
+	a uco-analysis:AnalyticResult ;
 	.
 
 kb:BluetoothAddress-53c6bc31-4f9c-4ca7-96cb-c9c61d7e4ca2
