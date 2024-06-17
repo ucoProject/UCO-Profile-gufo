@@ -22,5 +22,5 @@
     <uri id="User Entered Import Resolution" uri="../dependencies/UCO/ontology/uco/vocabulary/vocabulary.ttl" name="https://ontology.unifiedcyberontology.org/uco/vocabulary/1.3.0"/>
     <uri id="User Entered Import Resolution" uri="../dependencies/example.ttl" name="http://example.org/ontology/example/0.0.1"/>
     <uri id="User Entered Import Resolution" uri="../ontology/uco-example.ttl" name="http://example.org/ontology/uco-example"/>
-    <uri id="User Entered Import Resolution" uri="sh-example.ttl" name="http://example.org/shapes/example"/>
+    <uri id="User Entered Import Resolution" uri="sh-example.ttl" name="http://example.org/shapes/sh-example"/>
 </catalog>
