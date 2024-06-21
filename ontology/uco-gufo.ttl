@@ -220,6 +220,10 @@ uco-identity:Person
 
 uco-observable:AlternateDataStream
 	a gufo:Kind ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
 	.
 
 uco-observable:BluetoothAddressFacet
