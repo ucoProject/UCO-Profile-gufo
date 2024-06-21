@@ -30,6 +30,15 @@ kb:Action-13c91d40-9ca0-4558-81a1-4f7db888c371
 	uco-action:startTime "2020-01-02T03:04:05Z"^^xsd:dateTime ;
 	.
 
+kb:AlternateDataStream-e6ceee40-5614-4740-b08c-d21ce9b2356d
+	a
+		uco-observable:AlternateDataStream ,
+		uco-observable:FileSystemObject
+		;
+	rdfs:comment "TODO - The assignment of FileSystemObject is only necessary until UCO Issue 590 is incorporated."@en ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/590> ;
+	.
+
 kb:AnalyticResult-34fb92db-d576-45a7-9d62-dae04510968f
 	a uco-analysis:AnalyticResult ;
 	.

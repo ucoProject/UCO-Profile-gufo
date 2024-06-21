@@ -20,6 +20,7 @@ from pathlib import Path
 from typing import Optional, Set
 
 from rdflib import RDF, RDFS, Graph, URIRef
+from rdflib.query import ResultRow
 
 NS_RDF = RDF
 NS_RDFS = RDFS
@@ -34,6 +35,7 @@ def test_exemplar_coverage() -> None:
     ontologies) designated a subclass of some C', and each property P
     designated a subproperty of some P', C (/P) is used in the exemplars
     graph.
+    For gUFO, instances of a gufo:Type are also included in the review.
     """
     exemplar_graph = Graph()
     profile_graph = Graph()
@@ -65,6 +67,22 @@ def test_exemplar_coverage() -> None:
     for triple in profile_graph.triples((None, NS_RDFS.subClassOf, None)):
         assert isinstance(triple[0], URIRef)
         classes_mapped.add(triple[0])
+
+    gufo_type_query = """\
+PREFIX gufo: <http://purl.org/nemo/gufo#>
+SELECT ?nClass
+WHERE {
+  # owl:Class restriction is to not pick up Relators.
+  ?nClass
+    a owl:Class ;
+    a/rdfs:subClassOf* gufo:Type ;
+    .
+}
+"""
+    for gufo_type_query_result in tbox_graph.query(gufo_type_query):
+        assert isinstance(gufo_type_query_result, ResultRow)
+        assert isinstance(gufo_type_query_result[0], URIRef)
+        classes_mapped.add(gufo_type_query_result[0])
 
     result: Optional[bool]
 

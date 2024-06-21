@@ -218,6 +218,14 @@ uco-identity:Person
 		;
 	.
 
+uco-observable:AlternateDataStream
+	a gufo:Kind ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
+	.
+
 uco-observable:BluetoothAddressFacet
 	a drafting:SpecificFacetType ;
 	.
@@ -227,6 +235,10 @@ uco-observable:Device
 		drafting:Endurant ,
 		gufo:Object
 		;
+	.
+
+uco-observable:FileSystemObject
+	a gufo:Category ;
 	.
 
 uco-observable:MACAddressFacet
