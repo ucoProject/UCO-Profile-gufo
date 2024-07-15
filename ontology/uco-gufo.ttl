@@ -127,6 +127,32 @@ drafting:Velocity
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
+drafting:hadParticipant
+	a
+		owl:ObjectProperty ,
+		gufo:MaterialRelationshipType
+		;
+	rdfs:subPropertyOf [
+		owl:inverseOf gufo:participatedIn ;
+	] ;
+	rdfs:domain drafting:Perdurant ;
+	rdfs:range drafting:Endurant ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
+	.
+
+drafting:hadPerdurantProperPart
+	a
+		owl:ObjectProperty ,
+		gufo:MaterialRelationshipType
+		;
+	rdfs:subPropertyOf [
+		owl:inverseOf gufo:isEventProperPartOf ;
+	] ;
+	rdfs:domain drafting:Perdurant ;
+	rdfs:range drafting:Perdurant ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
+	.
+
 drafting:isBearerOf
 	a owl:ObjectProperty ;
 	rdfs:domain gufo:ConcreteIndividual ;
@@ -145,11 +171,41 @@ uco-action:endTime
 		;
 	.
 
+uco-action:instrument
+	a gufo:MaterialRelationshipType ;
+	rdfs:subPropertyOf drafting:hadParticipant ;
+	.
+
+uco-action:object
+	a gufo:MaterialRelationshipType ;
+	rdfs:subPropertyOf drafting:hadParticipant ;
+	.
+
+uco-action:participant
+	a gufo:MaterialRelationshipType ;
+	rdfs:subPropertyOf drafting:hadParticipant ;
+	.
+
+uco-action:performer
+	a gufo:MaterialRelationshipType ;
+	rdfs:subPropertyOf drafting:hadParticipant ;
+	.
+
+uco-action:result
+	a gufo:MaterialRelationshipType ;
+	rdfs:subPropertyOf drafting:hadParticipant ;
+	.
+
 uco-action:startTime
 	rdfs:seeAlso
 		gufo:hasBeginPoint ,
 		gufo:hasBeginPointInXSDDateTimeStamp
 		;
+	.
+
+uco-action:subaction
+	a gufo:MaterialRelationshipType ;
+	rdfs:subPropertyOf drafting:hadPerdurantProperPart ;
 	.
 
 uco-analysis:AnalyticResult
