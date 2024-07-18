@@ -25,14 +25,28 @@
 
 kb:Action-13c91d40-9ca0-4558-81a1-4f7db888c371
 	a uco-action:Action ;
-	uco-action:endTime "2021-02-03T04:05:06Z"^^xsd:dateTime ;
-	uco-action:startTime "2020-01-02T03:04:05Z"^^xsd:dateTime ;
 	gufo:hasBeginPointInXSDDateTimeStamp "2020-01-02T03:04:05Z"^^xsd:dateTimeStamp ;
 	gufo:hasEndPointInXSDDateTimeStamp "2021-02-03T04:05:06Z"^^xsd:dateTimeStamp ;
+	uco-action:endTime "2021-02-03T04:05:06Z"^^xsd:dateTime ;
+	uco-action:startTime "2020-01-02T03:04:05Z"^^xsd:dateTime ;
+	.
+
+kb:AlternateDataStream-e6ceee40-5614-4740-b08c-d21ce9b2356d
+	a
+		uco-observable:AlternateDataStream ,
+		uco-observable:FileSystemObject
+		;
+	rdfs:comment "TODO - The assignment of FileSystemObject is only necessary until UCO Issue 590 is incorporated."@en ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/590> ;
 	.
 
 kb:AnalyticResult-34fb92db-d576-45a7-9d62-dae04510968f
 	a uco-analysis:AnalyticResult ;
+	.
+
+kb:Bearing-74c2bb20-1e4f-40ac-807e-bc2c528e39da
+	a drafting:Bearing ;
+	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
 	.
 
 kb:BluetoothAddress-53c6bc31-4f9c-4ca7-96cb-c9c61d7e4ca2
@@ -43,18 +57,21 @@ kb:BluetoothAddress-53c6bc31-4f9c-4ca7-96cb-c9c61d7e4ca2
 		;
 	.
 
-kb:Bearing-74c2bb20-1e4f-40ac-807e-bc2c528e39da
-	a drafting:Bearing ;
-	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
-	.
-
 kb:BluetoothAddressFacet-717b8cce-e9c2-4d59-81e4-1747d7e2d8ee
 	a uco-observable:BluetoothAddressFacet ;
+	.
+
+kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f
+	a uco-observable:ContentData ;
 	.
 
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
 	uco-core:hasFacet kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628 ;
+	.
+
+kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec
+	a uco-observable:ContentData ;
 	.
 
 kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
@@ -63,10 +80,10 @@ kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
 
 kb:Event-03a1a1db-0579-4427-9a51-448c32281146
 	a uco-core:Event ;
-	uco-core:endTime "2011-02-03T04:05:06Z"^^xsd:dateTime ;
-	uco-core:startTime "2010-01-02T03:04:05Z"^^xsd:dateTime ;
 	gufo:hasBeginPointInXSDDateTimeStamp "2010-01-02T03:04:05Z"^^xsd:dateTimeStamp ;
 	gufo:hasEndPointInXSDDateTimeStamp "2011-02-03T04:05:06Z"^^xsd:dateTimeStamp ;
+	uco-core:endTime "2011-02-03T04:05:06Z"^^xsd:dateTime ;
+	uco-core:startTime "2010-01-02T03:04:05Z"^^xsd:dateTime ;
 	.
 
 kb:Hash-4c3d0623-d365-4c69-a1a1-01523c6502fa
@@ -136,9 +153,12 @@ kb:QualityValueAttributionSituation-872b7dd1-b49a-4278-bfdf-df507493d63f
 	gufo:hasEndPoint kb:Instant-c9ae3fce-ddcb-416b-971b-559c2f5bee95 ;
 	.
 
-kb:Velocity-62bc6232-b570-45d7-b382-d4e0a36fceb9
-	a drafting:Velocity ;
-	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
+kb:Relationship-2be6b54a-a051-499c-9dcd-63d17d813293
+	a uco-core:Relationship ;
+	uco-core:isDirectional "true"^^xsd:boolean ;
+	uco-core:kindOfRelationship "Contained_Within" ;
+	uco-core:source kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f ;
+	uco-core:target kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec ;
 	.
 
 kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc
@@ -147,5 +167,10 @@ kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc
 		kb:QualityValueAttributionSituation-3ec99074-3cd1-4d24-a2c0-2339850ab9d2 ,
 		kb:QualityValueAttributionSituation-872b7dd1-b49a-4278-bfdf-df507493d63f
 		;
+	.
+
+kb:Velocity-62bc6232-b570-45d7-b382-d4e0a36fceb9
+	a drafting:Velocity ;
+	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
 	.
 
