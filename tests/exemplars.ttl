@@ -11,6 +11,7 @@
 @prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix uco-vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
@@ -84,9 +85,17 @@ kb:Camera-1c9a2999-b34c-459b-b983-113c7b9e71df
 	rdfs:comment "A digital, non-phone camera."@en ;
 	.
 
+kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f
+	a uco-observable:ContentData ;
+	.
+
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
 	uco-core:hasFacet kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628 ;
+	.
+
+kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec
+	a uco-observable:ContentData ;
 	.
 
 kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
@@ -140,6 +149,10 @@ kb:Interval-336d4db4-727e-4694-8bf0-5902c6ae504f
 	time:inside kb:Instant-2918592a-9d87-4b30-acbc-521a19f97fcd ;
 	.
 
+kb:Location-c39f5c70-ba6d-44a1-8c6c-426b0372eade
+	a uco-location:Location ;
+	.
+
 kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
 	a uco-observable:MACAddressFacet ;
 	.
@@ -180,6 +193,14 @@ kb:QualityValueAttributionSituation-872b7dd1-b49a-4278-bfdf-df507493d63f
 	gufo:concernsQualityValue "50 km/h" ;
 	gufo:hasBeginPoint kb:Instant-24d2c5f3-d194-4db9-972a-9472c267d047 ;
 	gufo:hasEndPoint kb:Instant-c9ae3fce-ddcb-416b-971b-559c2f5bee95 ;
+	.
+
+kb:Relationship-2be6b54a-a051-499c-9dcd-63d17d813293
+	a uco-core:Relationship ;
+	uco-core:isDirectional "true"^^xsd:boolean ;
+	uco-core:kindOfRelationship "Contained_Within" ;
+	uco-core:source kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f ;
+	uco-core:target kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec ;
 	.
 
 kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc
