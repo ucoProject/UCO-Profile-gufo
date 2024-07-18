@@ -11,6 +11,7 @@
 @prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix uco-vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
@@ -28,6 +29,15 @@ kb:Action-13c91d40-9ca0-4558-81a1-4f7db888c371
 	gufo:hasEndPointInXSDDateTimeStamp "2021-02-03T04:05:06Z"^^xsd:dateTimeStamp ;
 	uco-action:endTime "2021-02-03T04:05:06Z"^^xsd:dateTime ;
 	uco-action:startTime "2020-01-02T03:04:05Z"^^xsd:dateTime ;
+	.
+
+kb:AlternateDataStream-e6ceee40-5614-4740-b08c-d21ce9b2356d
+	a
+		uco-observable:AlternateDataStream ,
+		uco-observable:FileSystemObject
+		;
+	rdfs:comment "TODO - The assignment of FileSystemObject is only necessary until UCO Issue 590 is incorporated."@en ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/590> ;
 	.
 
 kb:AnalyticResult-34fb92db-d576-45a7-9d62-dae04510968f
@@ -55,9 +65,17 @@ kb:Compiler-7ae00fea-f392-4da5-9b07-ea0ee12e27ed
 	a drafting:Compiler ;
 	.
 
+kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f
+	a uco-observable:ContentData ;
+	.
+
 kb:ContentData-179c7e84-f72d-47f7-b6f3-3f4a1f0938bd
 	a uco-observable:ContentData ;
 	uco-core:hasFacet kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628 ;
+	.
+
+kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec
+	a uco-observable:ContentData ;
 	.
 
 kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
@@ -109,6 +127,10 @@ kb:LinuxTask-45f8dd65-afee-4f48-8d4c-886b5d53cfa3
 	a drafting:LinuxTask ;
 	.
 
+kb:Location-c39f5c70-ba6d-44a1-8c6c-426b0372eade
+	a uco-location:Location ;
+	.
+
 kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
 	a uco-observable:MACAddressFacet ;
 	.
@@ -147,6 +169,14 @@ kb:QualityValueAttributionSituation-872b7dd1-b49a-4278-bfdf-df507493d63f
 	gufo:hasEndPoint kb:Instant-c9ae3fce-ddcb-416b-971b-559c2f5bee95 ;
 	.
 
+kb:Relationship-2be6b54a-a051-499c-9dcd-63d17d813293
+	a uco-core:Relationship ;
+	uco-core:isDirectional "true"^^xsd:boolean ;
+	uco-core:kindOfRelationship "Contained_Within" ;
+	uco-core:source kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f ;
+	uco-core:target kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec ;
+	.
+
 kb:ServicePack-fbdc96ef-b634-4869-8cd6-b23d31ff5b18
 	a drafting:ServicePack ;
 	.
@@ -166,6 +196,10 @@ kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc
 kb:Velocity-62bc6232-b570-45d7-b382-d4e0a36fceb9
 	a drafting:Velocity ;
 	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
+	.
+
+kb:WindowsService-ba5cfea3-b6f8-474d-8130-053b752cbc8c
+	a uco-observable:WindowsService ;
 	.
 
 kb:WindowsTask-1148ebc4-750b-43f8-a17d-6ba239f62ae7

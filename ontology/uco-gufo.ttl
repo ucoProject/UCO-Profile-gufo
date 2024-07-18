@@ -10,6 +10,7 @@
 @prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
 @prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -146,6 +147,7 @@ drafting:Service
 		gufo:Category ,
 		owl:Class
 		;
+	rdfs:subClassOf uco-observable:Process ;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
 	.
 
@@ -263,6 +265,13 @@ uco-core:Item
 		;
 	.
 
+uco-core:Relationship
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
+	.
+
 uco-core:endTime
 	rdfs:seeAlso
 		gufo:hasEndPoint ,
@@ -301,6 +310,21 @@ uco-identity:Person
 		;
 	.
 
+uco-location:Location
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
+	.
+
+uco-observable:AlternateDataStream
+	a gufo:Kind ;
+	rdfs:subClassOf
+		drafting:Endurant ,
+		gufo:Object
+		;
+	.
+
 uco-observable:BluetoothAddressFacet
 	a drafting:SpecificFacetType ;
 	.
@@ -310,6 +334,10 @@ uco-observable:Device
 		drafting:Endurant ,
 		gufo:Object
 		;
+	.
+
+uco-observable:FileSystemObject
+	a gufo:Category ;
 	.
 
 uco-observable:MACAddressFacet
@@ -326,6 +354,7 @@ uco-observable:Software
 
 uco-observable:WindowsService
 	a gufo:Kind ;
+	rdfs:subClassOf drafting:Service ;
 	.
 
 uco-observable:WindowsTask
@@ -358,5 +387,39 @@ uco-types:Hash
 	owl:annotatedObject gufo:Object ;
 	owl:annotatedProperty rdfs:subClassOf ;
 	owl:annotatedSubject uco-core:Assertion ;
+	.
+
+[]
+	a owl:NegativePropertyAssertion ;
+	rdfs:comment "If this specialization were introduced, a further specialization would be suggested for gufo:mediates.  A demonstration exists among the CASE examples that is incompatible: A Relationship, 'Mapped_Into', that relates two Actions together to demonstrate a lifecycle phase."@en ;
+	rdfs:seeAlso
+		<http://example.org/kb/lifecycle_phase-60a55e96-d39e-487e-9b39-3ba96e1ffc7a> ,
+		<https://github.com/casework/CASE-Examples/tree/dc6f6b901289c1684fd88e25e9bcec925974d155/examples/illustrations/forensic_lifecycle> ,
+		[
+			a owl:NegativePropertyAssertion ;
+			rdfs:comment "gufo:mediates has range gufo:Endurant, but a uco-core:Relationship is permitted to link any UcoObject, including perdurants."@en ;
+			rdfs:seeAlso
+				<http://example.org/kb/lifecycle_phase-60a55e96-d39e-487e-9b39-3ba96e1ffc7a> ,
+				<https://github.com/casework/CASE-Examples/tree/dc6f6b901289c1684fd88e25e9bcec925974d155/examples/illustrations/forensic_lifecycle>
+				;
+			owl:assertionProperty rdfs:subPropertyOf ;
+			owl:sourceInvididual uco-core:source ;
+			owl:targetInvididual gufo:mediates ;
+		] ,
+		[
+			a owl:NegativePropertyAssertion ;
+			rdfs:comment "gufo:mediates has range gufo:Endurant, but a uco-core:Relationship is permitted to link any UcoObject, including perdurants."@en ;
+			rdfs:seeAlso
+				<http://example.org/kb/lifecycle_phase-60a55e96-d39e-487e-9b39-3ba96e1ffc7a> ,
+				<https://github.com/casework/CASE-Examples/tree/dc6f6b901289c1684fd88e25e9bcec925974d155/examples/illustrations/forensic_lifecycle>
+				;
+			owl:assertionProperty rdfs:subPropertyOf ;
+			owl:sourceInvididual uco-core:target ;
+			owl:targetInvididual gufo:mediates ;
+		]
+		;
+	owl:assertionProperty rdfs:subClassOf ;
+	owl:sourceInvididual uco-core:Relationship ;
+	owl:targetInvididual gufo:Relator ;
 	.
 
