@@ -40,8 +40,20 @@ drafting:Bearing
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
+drafting:BuildUtility
+	a
+		gufo:Category ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Software ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
 drafting:Compiler
-	a owl:Class ;
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
 	rdfs:subClassOf
 		gufo:FunctionalComplex ,
 		uco-observable:Software
@@ -96,13 +108,41 @@ drafting:GeneralFacetType
 		;
 	.
 
+drafting:LinuxProcess
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Process ;
+	.
+
+drafting:LinuxService
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		drafting:LinuxProcess ,
+		drafting:Service
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
 drafting:LinuxTask
 	a
-		gufo:Kind ,
+		gufo:SubKind ,
 		owl:Class
 		;
 	rdfs:subClassOf drafting:Task ;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:LinuxThread
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:ProcessThread ;
 	.
 
 drafting:Package
@@ -152,7 +192,10 @@ drafting:Service
 	.
 
 drafting:ServicePack
-	a owl:Class ;
+	a
+		gufo:EndurantType ,
+		owl:Class
+		;
 	rdfs:subClassOf
 		gufo:FunctionalComplex ,
 		uco-observable:Software
@@ -182,10 +225,10 @@ drafting:SpecificFacetType
 
 drafting:Task
 	a
-		gufo:Category ,
+		gufo:Kind ,
 		owl:Class
 		;
-	rdfs:subClassOf uco-observable:Process ;
+	rdfs:subClassOf uco-observable:Software ;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
 	.
 
@@ -381,8 +424,16 @@ uco-observable:AlternateDataStream
 		;
 	.
 
+uco-observable:Application
+	a gufo:Category ;
+	.
+
 uco-observable:BluetoothAddressFacet
 	a drafting:SpecificFacetType ;
+	.
+
+uco-observable:Code
+	a gufo:Category ;
 	.
 
 uco-observable:Device
@@ -396,12 +447,24 @@ uco-observable:FileSystemObject
 	a gufo:Category ;
 	.
 
+uco-observable:Library
+	a gufo:SubKind ;
+	.
+
 uco-observable:MACAddressFacet
 	a drafting:GeneralFacetType ;
 	.
 
+uco-observable:OperatingSystem
+	a gufo:Kind ;
+	.
+
 uco-observable:Process
-	a gufo:Category ;
+	a gufo:Kind ;
+	.
+
+uco-observable:ProcessThread
+	a gufo:Kind ;
 	.
 
 uco-observable:Software
@@ -409,13 +472,18 @@ uco-observable:Software
 	.
 
 uco-observable:WindowsService
-	a gufo:Kind ;
+	a gufo:SubKind ;
 	rdfs:subClassOf drafting:Service ;
 	.
 
 uco-observable:WindowsTask
-	a gufo:Kind ;
+	a gufo:SubKind ;
 	rdfs:subClassOf drafting:Task ;
+	.
+
+uco-observable:WindowsThread
+	a gufo:SubKind ;
+	rdfs:subClassOf uco-observable:ProcessThread ;
 	.
 
 uco-types:Hash
