@@ -214,7 +214,7 @@ drafting:Service
 
 drafting:ServicePack
 	a
-		gufo:EndurantType ,
+		gufo:Kind ,
 		owl:Class
 		;
 	rdfs:subClassOf
