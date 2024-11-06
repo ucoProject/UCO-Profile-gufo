@@ -181,6 +181,10 @@ kb:LinuxTask-45f8dd65-afee-4f48-8d4c-886b5d53cfa3
 	a drafting:LinuxTask ;
 	.
 
+kb:LinuxThread-28b71acf-ac8e-40af-b573-56f2c2d00a1f
+	a drafting:LinuxThread ;
+	.
+
 kb:Location-c39f5c70-ba6d-44a1-8c6c-426b0372eade
 	a uco-location:Location ;
 	.
