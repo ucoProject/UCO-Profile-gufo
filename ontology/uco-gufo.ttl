@@ -47,6 +47,10 @@ drafting:BuildUtility
 		;
 	rdfs:subClassOf uco-observable:Software ;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		uco-observable:Library ,
+		uco-observable:OperatingSystem
+		;
 	.
 
 drafting:Compiler
@@ -59,6 +63,7 @@ drafting:Compiler
 		uco-observable:Software
 		;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith uco-observable:OperatingSystem ;
 	.
 
 drafting:DeploymentScript
@@ -201,6 +206,13 @@ drafting:ServicePack
 		uco-observable:Software
 		;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		uco-observable:Application ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem
+		;
 	.
 
 drafting:SoftwareBuild
@@ -230,6 +242,19 @@ drafting:Task
 		;
 	rdfs:subClassOf uco-observable:Software ;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:Script ,
+		drafting:ServicePack ,
+		drafting:SoftwareBuild ,
+		uco-observable:Application ,
+		uco-observable:Code ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
 	.
 
 drafting:Vehicle
@@ -426,6 +451,10 @@ uco-observable:AlternateDataStream
 
 uco-observable:Application
 	a gufo:Category ;
+	owl:disjointWith
+		uco-observable:Library ,
+		uco-observable:OperatingSystem
+		;
 	.
 
 uco-observable:BluetoothAddressFacet
@@ -449,6 +478,11 @@ uco-observable:FileSystemObject
 
 uco-observable:Library
 	a gufo:SubKind ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		uco-observable:OperatingSystem
+		;
 	.
 
 uco-observable:MACAddressFacet
@@ -461,10 +495,36 @@ uco-observable:OperatingSystem
 
 uco-observable:Process
 	a gufo:Kind ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:Script ,
+		drafting:ServicePack ,
+		drafting:SoftwareBuild ,
+		drafting:Task ,
+		uco-observable:Application ,
+		uco-observable:Code ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:ProcessThread
+		;
 	.
 
 uco-observable:ProcessThread
 	a gufo:Kind ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:Script ,
+		drafting:ServicePack ,
+		drafting:SoftwareBuild ,
+		drafting:Task ,
+		uco-observable:Application ,
+		uco-observable:Code ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process
+		;
 	.
 
 uco-observable:Software
