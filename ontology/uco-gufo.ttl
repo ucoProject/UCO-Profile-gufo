@@ -244,6 +244,14 @@ uco-core:Relationship
 		;
 	.
 
+uco-core:UcoInherentCharacterizationThing
+	owl:disjointWith drafting:FacetType ;
+	.
+
+uco-core:UcoObject
+	owl:disjointWith drafting:FacetType ;
+	.
+
 uco-core:endTime
 	rdfs:seeAlso
 		gufo:hasEndPoint ,
