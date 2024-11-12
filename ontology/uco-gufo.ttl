@@ -163,10 +163,21 @@ drafting:LinuxThread
 
 drafting:Package
 	a
-		gufo:Kind ,
+		gufo:Category ,
 		owl:Class
 		;
-	rdfs:subClassOf uco-observable:Software ;
+	rdfs:subClassOf
+		gufo:FunctionalComplex ,
+		uco-observable:Software ,
+		[
+			a owl:Restriction ;
+			owl:onProperty [
+				owl:inverse gufo:isComponentOf ;
+			] ;
+			owl:onClass drafting:SoftwareBuild ;
+			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
 	.
 
@@ -217,10 +228,7 @@ drafting:ServicePack
 		gufo:Kind ,
 		owl:Class
 		;
-	rdfs:subClassOf
-		gufo:FunctionalComplex ,
-		uco-observable:Software
-		;
+	rdfs:subClassOf drafting:Package ;
 	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
 	owl:disjointWith
 		drafting:BuildUtility ,
@@ -604,6 +612,14 @@ uco-observable:WindowsThread
 
 uco-types:Hash
 	rdfs:subClassOf gufo:AbstractIndividual ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "Mereologically, Package is comprised of multiple parts, including the distribution resource (/payload)."@en ;
+	owl:annotatedObject gufo:FunctionalComplex ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSubject drafting:Package ;
 	.
 
 []
