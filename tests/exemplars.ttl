@@ -120,6 +120,10 @@ kb:File-9a36db96-b6ee-49e6-a976-046a95a072a0
 	rdfs:comment "TODO - At the time of this writing, File and its subclasses need alignment with gUFO."@en ;
 	.
 
+kb:FileSystem-c0becd4a-5b5d-4a26-a1f8-175d623abab2
+	a uco-observable:FileSystem ;
+	.
+
 kb:Hash-4c3d0623-d365-4c69-a1a1-01523c6502fa
 	a
 		gufo:QualityValue ,

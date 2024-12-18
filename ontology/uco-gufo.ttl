@@ -316,6 +316,10 @@ uco-observable:Device
 		;
 	.
 
+uco-observable:FileSystem
+	a gufo:Kind ;
+	.
+
 uco-observable:FileSystemObject
 	a gufo:Category ;
 	.
