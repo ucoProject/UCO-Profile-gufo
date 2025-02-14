@@ -105,7 +105,7 @@ monolithic.ttl: \
 	    > _$@
 	source $(top_srcdir)/venv/bin/activate \
 	  && pyshacl \
-	    --shacl $(uco_srcdir)/ontology/owl/owl.ttl \
+	    --shacl _$@ \
 	    _$@
 	# The monolithic build reviews itself, due to shapes pertaining to meta-classes.
 	source $(top_srcdir)/venv/bin/activate \
