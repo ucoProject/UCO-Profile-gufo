@@ -1,4 +1,5 @@
 # imports: http://example.org/ontology/uco-gufo
+# imports: http://example.org/shapes/sh-gufo
 
 @prefix drafting: <http://example.org/ontology/drafting/> .
 @prefix gufo: <http://purl.org/nemo/gufo#> .
@@ -12,7 +13,10 @@
 
 <http://example.org/shapes/sh-uco-gufo>
 	a owl:Ontology ;
-	owl:imports <http://example.org/ontology/uco-gufo> ;
+	owl:imports
+		<http://example.org/ontology/uco-gufo> ,
+		<http://example.org/shapes/sh-gufo>
+		;
 	.
 
 sh-uco-gufo:Bearing-shape
