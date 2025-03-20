@@ -20,10 +20,24 @@ top_srcdir := $(shell cd .. ; pwd)
 
 uco_srcdir := $(top_srcdir)/dependencies/UCO
 
+test_pys := $(wildcard test_*.py)
+
 ttl_basenames := $(wildcard sh-*.ttl)
 
 all: \
   catalog-v001.xml
+
+.pytest.done.log: \
+  $(test_pys) \
+  $(top_srcdir)/.venv.done.log \
+  $(ttl_basenames)
+	test 'x$(test_pys)' == 'x' \
+	  || ( \
+	    source $(top_srcdir)/venv/bin/activate \
+	      && pytest \
+	        --log-level=DEBUG \
+	  )
+	touch $@
 
 catalog-v001.xml: \
   $(top_srcdir)/.venv.done.log \
@@ -44,11 +58,13 @@ catalog-v001.xml: \
 	mv _$@ $@
 
 check: \
+  .pytest.done.log \
   catalog-v001.xml
 
 clean:
 	@rm -rf \
 	  __pycache__
 	@rm -f \
+	  .*.done.log \
 	  _* \
 	  catalog-v001.xml

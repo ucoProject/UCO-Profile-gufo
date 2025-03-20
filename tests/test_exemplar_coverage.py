@@ -18,9 +18,10 @@ import logging
 from pathlib import Path
 from typing import Optional, Set
 
-from rdflib import RDF, RDFS, Graph, URIRef
+from rdflib import OWL, RDF, RDFS, Graph, URIRef
 from rdflib.query import ResultRow
 
+NS_OWL = OWL
 NS_RDF = RDF
 NS_RDFS = RDFS
 
@@ -31,9 +32,9 @@ top_srcdir = srcdir.parent
 def test_exemplar_coverage() -> None:
     """
     This test confirms that for each class C in the profile ontology (or
-    ontologies) designated a subclass of some C', and each property P
-    designated a subproperty of some P', C (/P) is used in the exemplars
-    graph.
+    ontologies) designated a class, or a subclass of some C'; and each
+    property P designated a property, or a subproperty of some P';
+    C (/P) is used in the exemplars graph.
     For gUFO, instances of a gufo:Type are also included in the review.
     """
     exemplar_graph = Graph()
@@ -65,6 +66,10 @@ def test_exemplar_coverage() -> None:
 
     classes_mapped: Set[URIRef] = set()
     classes_with_exemplars: Set[URIRef] = set()
+
+    for triple in profile_graph.triples((None, NS_RDF.type, NS_OWL.Class)):
+        assert isinstance(triple[0], URIRef)
+        classes_mapped.add(triple[0])
 
     for triple in profile_graph.triples((None, NS_RDFS.subClassOf, None)):
         assert isinstance(triple[0], URIRef)
@@ -118,6 +123,14 @@ ASK {
     properties_mapped: Set[URIRef] = set()
     properties_with_exemplars: Set[URIRef] = set()
 
+    for n_property_class in {
+        NS_OWL.AnnotationProperty,
+        NS_OWL.DatatypeProperty,
+        NS_OWL.ObjectProperty,
+    }:
+        for triple in profile_graph.triples((None, NS_RDF.type, n_property_class)):
+            assert isinstance(triple[0], URIRef)
+            properties_mapped.add(triple[0])
     for triple in profile_graph.triples((None, NS_RDFS.subPropertyOf, None)):
         assert isinstance(triple[0], URIRef)
         properties_mapped.add(triple[0])
