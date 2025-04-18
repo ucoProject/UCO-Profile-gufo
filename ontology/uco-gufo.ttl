@@ -278,7 +278,7 @@ uco-identity:Organization
 	a gufo:Kind ;
 	rdfs:subClassOf
 		drafting:Endurant ,
-		gufo:Object
+		gufo:FunctionalComplex
 		;
 	.
 
@@ -286,7 +286,7 @@ uco-identity:Person
 	a gufo:Kind ;
 	rdfs:subClassOf
 		drafting:Endurant ,
-		gufo:Object
+		gufo:FunctionalComplex
 		;
 	.
 
@@ -312,7 +312,7 @@ uco-observable:BluetoothAddressFacet
 uco-observable:Device
 	rdfs:subClassOf
 		drafting:Endurant ,
-		gufo:Object
+		gufo:FunctionalComplex
 		;
 	.
 
