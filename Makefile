@@ -106,10 +106,15 @@ all-ontology: \
 	$(MAKE) \
 	  --directory ontology
 
+# NOTE: For profiles that don't include shapes, the $(top_srcdir)/shapes
+# directory might be missing.  Checking for its existence first relieves
+# each profile of needing to modify the top Makefile when removing
+# shapes.
 all-shapes: \
   all-dependencies
-	$(MAKE) \
-	  --directory shapes
+	test ! -d shapes \
+	  || $(MAKE) \
+	    --directory shapes
 
 check: \
   .venv-pre-commit/var/.pre-commit-built.log \
@@ -142,11 +147,16 @@ check-ontology: \
 	  --directory ontology \
 	  check
 
+# NOTE: For profiles that don't include shapes, the $(top_srcdir)/shapes
+# directory might be missing.  Checking for its existence first relieves
+# each profile of needing to modify the top Makefile when removing
+# shapes.
 check-shapes: \
   all-shapes
-	$(MAKE) \
-	  --directory shapes \
-	  check
+	test ! -d shapes \
+	  || $(MAKE) \
+	    --directory shapes \
+	    check
 
 # This target's dependencies potentially modify the working directory's
 # Git state, so it is intentionally not a dependency of check.
@@ -217,9 +227,10 @@ clean:
 	@$(MAKE) \
 	  --directory tests \
 	  clean
-	@$(MAKE) \
-	  --directory shapes \
-	  clean
+	@test ! -d shapes \
+	  || $(MAKE) \
+	    --directory shapes \
+	    clean
 	@$(MAKE) \
 	  --directory ontology \
 	  clean
