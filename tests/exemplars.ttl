@@ -142,6 +142,10 @@ kb:Instant-2918592a-9d87-4b30-acbc-521a19f97fcd
 	time:inXSDDateTimeStamp "2023-11-22T15:30:00Z"^^xsd:dateTimeStamp ;
 	.
 
+kb:Instant-9c8a3c04-11ee-46a7-b320-8c5abe28b5cc
+	a drafting:Instant ;
+	.
+
 kb:Instant-c9ae3fce-ddcb-416b-971b-559c2f5bee95
 	a time:Instant ;
 	.
