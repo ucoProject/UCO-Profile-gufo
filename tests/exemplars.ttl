@@ -63,6 +63,10 @@ kb:AnalyticResult-34fb92db-d576-45a7-9d62-dae04510968f
 	a uco-analysis:AnalyticResult ;
 	.
 
+kb:Application-b1ccc498-d1ae-4101-a383-47fa1a1dcc54
+	a uco-observable:Application ;
+	.
+
 kb:Bearing-74c2bb20-1e4f-40ac-807e-bc2c528e39da
 	a drafting:Bearing ;
 	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
@@ -80,9 +84,21 @@ kb:BluetoothAddressFacet-717b8cce-e9c2-4d59-81e4-1747d7e2d8ee
 	a uco-observable:BluetoothAddressFacet ;
 	.
 
+kb:BuildUtility-ecc20d36-1575-4d6b-adde-d22f3dd40cca
+	a drafting:BuildUtility ;
+	.
+
 kb:Camera-1c9a2999-b34c-459b-b983-113c7b9e71df
 	a uco-observable:Device ;
 	rdfs:comment "A digital, non-phone camera."@en ;
+	.
+
+kb:Code-8a651185-47ff-4aea-94e9-b7995f1b24f8
+	a uco-observable:Code ;
+	.
+
+kb:Compiler-7ae00fea-f392-4da5-9b07-ea0ee12e27ed
+	a drafting:Compiler ;
 	.
 
 kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f
@@ -100,6 +116,10 @@ kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec
 
 kb:ContentDataFacet-a961d865-087b-43bd-ab31-0e33331c5628
 	a uco-observable:ContentDataFacet ;
+	.
+
+kb:DeploymentScript-6a4ce3a2-afbe-4680-9609-3b68af8965ff
+	a drafting:DeploymentScript ;
 	.
 
 kb:Device-f28f07fa-0c36-486e-b957-750d183e5851
@@ -153,6 +173,22 @@ kb:Interval-336d4db4-727e-4694-8bf0-5902c6ae504f
 	time:inside kb:Instant-2918592a-9d87-4b30-acbc-521a19f97fcd ;
 	.
 
+kb:Library:bc578b6e-db2d-4b5f-8108-137fe081573f
+	a uco-observable:Library ;
+	.
+
+kb:LinuxService-971020ef-07cd-4005-977c-b31c56789aca
+	a drafting:LinuxService ;
+	.
+
+kb:LinuxTask-45f8dd65-afee-4f48-8d4c-886b5d53cfa3
+	a drafting:LinuxTask ;
+	.
+
+kb:LinuxThread-28b71acf-ac8e-40af-b573-56f2c2d00a1f
+	a drafting:LinuxThread ;
+	.
+
 kb:Location-c39f5c70-ba6d-44a1-8c6c-426b0372eade
 	a uco-location:Location ;
 	.
@@ -161,8 +197,16 @@ kb:MACAddressFacet-3b25d05e-a3b0-4828-8b6d-1e08f4d4264f
 	a uco-observable:MACAddressFacet ;
 	.
 
+kb:OperatingSystem-78388f2c-305a-4f9c-8fd5-2ba98d987b11
+	a uco-observable:OperatingSystem ;
+	.
+
 kb:Organization-3b542161-47e1-40cd-a1b1-e1b9d07af81f
 	a uco-identity:Organization ;
+	.
+
+kb:Package-ed1cf421-2ecc-43d8-a1b8-daaec4f8021b
+	a drafting:Package ;
 	.
 
 kb:Person-0c9728af-7f52-400e-9861-72cd11f6966a
@@ -175,6 +219,10 @@ kb:Person-799c0b1d-2259-4438-b282-168060b3cb57
 
 kb:Person-ee7130a7-0fec-48df-8312-4da1a214bd59
 	a uco-identity:Person ;
+	.
+
+kb:ProcessThread-f400eeb2-b83f-4a52-9d1a-dcc9cae0da2e
+	a uco-observable:ProcessThread ;
 	.
 
 kb:Quality-4b765c1f-362c-4562-a50f-7bb781fe4737
@@ -207,6 +255,14 @@ kb:Relationship-2be6b54a-a051-499c-9dcd-63d17d813293
 	uco-core:target kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec ;
 	.
 
+kb:ServicePack-fbdc96ef-b634-4869-8cd6-b23d31ff5b18
+	a drafting:ServicePack ;
+	.
+
+kb:SoftwareBuild-35bf4562-2539-4c7f-a4f5-95865c6f81fa
+	a drafting:SoftwareBuild ;
+	.
+
 kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc
 	a drafting:Vehicle ;
 	gufo:standsInQualifiedAttribution
@@ -218,5 +274,17 @@ kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc
 kb:Velocity-62bc6232-b570-45d7-b382-d4e0a36fceb9
 	a drafting:Velocity ;
 	gufo:inheresIn kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc ;
+	.
+
+kb:WindowsService-ba5cfea3-b6f8-474d-8130-053b752cbc8c
+	a uco-observable:WindowsService ;
+	.
+
+kb:WindowsTask-1148ebc4-750b-43f8-a17d-6ba239f62ae7
+	a uco-observable:WindowsTask ;
+	.
+
+kb:WindowsThread-aa892ff7-ffd9-4269-89ab-79470813ab88
+	a uco-observable:WindowsThread ;
 	.
 

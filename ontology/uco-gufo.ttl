@@ -40,6 +40,52 @@ drafting:Bearing
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
+drafting:BuildUtility
+	a
+		gufo:Category ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Software ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		drafting:ServicePack ,
+		drafting:Task ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
+	.
+
+drafting:Compiler
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		gufo:FunctionalComplex ,
+		uco-observable:Software
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		drafting:ServicePack ,
+		drafting:Task ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
+	.
+
+drafting:DeploymentScript
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf drafting:Script ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
 drafting:Endurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -78,6 +124,63 @@ drafting:GeneralFacetType
 		;
 	.
 
+drafting:LinuxProcess
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Process ;
+	.
+
+drafting:LinuxService
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		drafting:LinuxProcess ,
+		drafting:Service
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:LinuxTask
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf drafting:Task ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:LinuxThread
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:ProcessThread ;
+	.
+
+drafting:Package
+	a
+		gufo:Category ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		gufo:FunctionalComplex ,
+		uco-observable:Software ,
+		[
+			a owl:Restriction ;
+			owl:onProperty [
+				owl:inverse gufo:isComponentOf ;
+			] ;
+			owl:onClass drafting:SoftwareBuild ;
+			owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+		]
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
 drafting:Perdurant
 	a owl:Class ;
 	rdfs:subClassOf
@@ -97,11 +200,92 @@ drafting:Quality
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/535> ;
 	.
 
+drafting:Script
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Software ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		drafting:Task ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
+	.
+
+drafting:Service
+	a
+		gufo:Category ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Process ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	.
+
+drafting:ServicePack
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf drafting:Package ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:Task ,
+		uco-observable:Application ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
+	.
+
+drafting:SoftwareBuild
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		gufo:FunctionalComplex ,
+		uco-observable:Software
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		drafting:Task ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
+	.
+
 drafting:SpecificFacetType
 	a owl:Class ;
 	rdfs:subClassOf
 		drafting:FacetType ,
 		gufo:Kind
+		;
+	.
+
+drafting:Task
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-observable:Software ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/596> ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:Script ,
+		drafting:ServicePack ,
+		drafting:SoftwareBuild ,
+		uco-observable:Application ,
+		uco-observable:Code ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
 		;
 	.
 
@@ -305,8 +489,29 @@ uco-observable:AlternateDataStream
 		;
 	.
 
+uco-observable:Application
+	a gufo:Category ;
+	owl:disjointWith
+		drafting:ServicePack ,
+		drafting:Task ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
+	.
+
 uco-observable:BluetoothAddressFacet
 	a drafting:SpecificFacetType ;
+	.
+
+uco-observable:Code
+	a gufo:Category ;
+	owl:disjointWith
+		drafting:Task ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
 	.
 
 uco-observable:Device
@@ -324,12 +529,101 @@ uco-observable:FileSystemObject
 	a gufo:Category ;
 	.
 
+uco-observable:Library
+	a gufo:SubKind ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:ServicePack ,
+		drafting:Task ,
+		uco-observable:Application ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
+	.
+
 uco-observable:MACAddressFacet
 	a drafting:GeneralFacetType ;
 	.
 
+uco-observable:OperatingSystem
+	a gufo:Kind ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:ServicePack ,
+		drafting:Task ,
+		uco-observable:Application ,
+		uco-observable:Library ,
+		uco-observable:Process ,
+		uco-observable:ProcessThread
+		;
+	.
+
+uco-observable:Process
+	a gufo:Kind ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:Script ,
+		drafting:ServicePack ,
+		drafting:SoftwareBuild ,
+		drafting:Task ,
+		uco-observable:Application ,
+		uco-observable:Code ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:ProcessThread
+		;
+	.
+
+uco-observable:ProcessThread
+	a gufo:Kind ;
+	owl:disjointWith
+		drafting:BuildUtility ,
+		drafting:Compiler ,
+		drafting:Script ,
+		drafting:ServicePack ,
+		drafting:SoftwareBuild ,
+		drafting:Task ,
+		uco-observable:Application ,
+		uco-observable:Code ,
+		uco-observable:Library ,
+		uco-observable:OperatingSystem ,
+		uco-observable:Process
+		;
+	.
+
+uco-observable:Software
+	a gufo:Category ;
+	.
+
+uco-observable:WindowsService
+	a gufo:SubKind ;
+	rdfs:subClassOf drafting:Service ;
+	.
+
+uco-observable:WindowsTask
+	a gufo:SubKind ;
+	rdfs:subClassOf drafting:Task ;
+	.
+
+uco-observable:WindowsThread
+	a gufo:SubKind ;
+	rdfs:subClassOf uco-observable:ProcessThread ;
+	.
+
 uco-types:Hash
 	rdfs:subClassOf gufo:AbstractIndividual ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "Mereologically, Package is comprised of multiple parts, including the distribution resource (/payload)."@en ;
+	owl:annotatedObject gufo:FunctionalComplex ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSubject drafting:Package ;
 	.
 
 []
