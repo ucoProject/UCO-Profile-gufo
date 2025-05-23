@@ -6,6 +6,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix time: <http://www.w3.org/2006/time#> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
 @prefix uco-core: <https://ontology.unifiedcyberontology.org/uco/core/> .
@@ -47,6 +48,7 @@ drafting:Endurant
 		uco-core:UcoThing
 		;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
+	owl:disjointWith drafting:Perdurant ;
 	.
 
 drafting:FacetType
@@ -78,13 +80,28 @@ drafting:GeneralFacetType
 		;
 	.
 
-drafting:Perdurant
+drafting:Instant
 	a owl:Class ;
 	rdfs:subClassOf
-		gufo:Event ,
-		uco-core:UcoObject
+		drafting:InstantaneousPerdurant ,
+		time:Instant
 		;
-	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/544> ;
+	.
+
+drafting:InstantaneousPerdurant
+	a owl:Class ;
+	rdfs:subClassOf drafting:Perdurant ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/651> ;
+	.
+
+drafting:Perdurant
+	a owl:Class ;
+	rdfs:subClassOf uco-core:UcoObject ;
+	rdfs:seeAlso
+		<https://github.com/ucoProject/UCO/issues/544> ,
+		<https://github.com/ucoProject/UCO/issues/651>
+		;
+	owl:disjointWith drafting:Endurant ;
 	.
 
 drafting:Quality
@@ -162,7 +179,10 @@ drafting:isBearerOf
 	.
 
 uco-action:Action
-	rdfs:subClassOf drafting:Perdurant ;
+	rdfs:subClassOf
+		drafting:Perdurant ,
+		gufo:Event
+		;
 	.
 
 uco-action:endTime
@@ -222,7 +242,10 @@ uco-core:Assertion
 	.
 
 uco-core:Event
-	rdfs:subClassOf drafting:Perdurant ;
+	rdfs:subClassOf
+		drafting:Perdurant ,
+		gufo:Event
+		;
 	.
 
 uco-core:Facet
@@ -334,6 +357,24 @@ uco-types:Hash
 
 []
 	a owl:Axiom ;
+	rdfs:comment "This axiom will be redundant upon resolution of UCO Issue 651."@en ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/651> ;
+	owl:annotatedObject drafting:Perdurant ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSubject uco-action:Action ;
+	.
+
+[]
+	a owl:Axiom ;
+	rdfs:comment "This axiom will be redundant upon resolution of UCO Issue 651."@en ;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/651> ;
+	owl:annotatedObject drafting:Perdurant ;
+	owl:annotatedProperty rdfs:subClassOf ;
+	owl:annotatedSubject uco-core:Event ;
+	.
+
+[]
+	a owl:Axiom ;
 	rdfs:comment
 		"This specialization stems from a Facet currently being understood to be an intrinsic mode that is not measurable.  Were it measurable, a Facet would be a Quality."@en ,
 		"This specialization will raise some disussion pertaining to core:ConfidenceFacet.  If a ConfidenceFacet is measurable, then it is a specialization of gufo:Quality, and Facet should instead be a subclass of IntrinsicAspect."@en
@@ -387,5 +428,13 @@ uco-types:Hash
 	owl:assertionProperty rdfs:subClassOf ;
 	owl:sourceInvididual uco-core:Relationship ;
 	owl:targetInvididual gufo:Relator ;
+	.
+
+[]
+	a owl:NegativePropertyAssertion ;
+	rdfs:comment "This might apply for a more general 'Perdurant' class, but drafting:Perdurant would not be appropriate - it is in the UcoThing subclass hierarchy."@en ;
+	owl:assertionProperty rdfs:subClassOf ;
+	owl:sourceInvididual gufo:Event ;
+	owl:targetInvididual drafting:Perdurant ;
 	.
 
