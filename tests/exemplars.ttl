@@ -14,7 +14,6 @@
 @prefix uco-location: <https://ontology.unifiedcyberontology.org/uco/location/> .
 @prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
 @prefix uco-types: <https://ontology.unifiedcyberontology.org/uco/types/> .
-@prefix uco-vocabulary: <https://ontology.unifiedcyberontology.org/uco/vocabulary/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 <http://example.org/kb>
@@ -129,7 +128,7 @@ kb:Hash-4c3d0623-d365-4c69-a1a1-01523c6502fa
 		gufo:QualityValue ,
 		uco-types:Hash
 		;
-	uco-types:hashMethod "SHA1"^^uco-vocabulary:HashNameVocab ;
+	uco-types:hashMethod "SHA1" ;
 	uco-types:hashValue "da39a3ee5e6b4b0d3255bfef95601890afd80709"^^xsd:hexBinary ;
 	.
 
