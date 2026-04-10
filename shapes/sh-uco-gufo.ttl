@@ -21,6 +21,17 @@
 		;
 	.
 
+sh-uco-gufo:AbstractIndividualType-shape
+	a sh:NodeShape ;
+	sh:property [
+		sh:hasValue uco-core:UcoInherentCharacterizationThing ;
+		sh:path [
+			sh:zeroOrMorePath rdfs:subClassOf ;
+		] ;
+	] ;
+	sh:targetClass drafting:AbstractIndividualType ;
+	.
+
 sh-uco-gufo:Bearing-shape
 	a sh:NodeShape ;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;

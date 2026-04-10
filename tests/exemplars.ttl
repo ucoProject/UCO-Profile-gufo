@@ -23,6 +23,15 @@
 	owl:imports <http://example.org/ontology/uco-gufo> ;
 	.
 
+kb:AbstractIndividualType-658cf3ca-f7fb-41d7-a1a3-3d13811a119c
+	a
+		drafting:AbstractIndividualType ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-core:UcoInherentCharacterizationThing ;
+	rdfs:seeAlso sh-uco-gufo:AbstractIndividualType-shape ;
+	.
+
 kb:Action-13c91d40-9ca0-4558-81a1-4f7db888c371
 	a uco-action:Action ;
 	gufo:hasBeginPointInXSDDateTimeStamp "2020-01-02T03:04:05Z"^^xsd:dateTimeStamp ;

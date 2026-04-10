@@ -24,6 +24,15 @@
 		;
 	.
 
+drafting:AbstractIndividualType
+	a owl:Class ;
+	rdfs:subClassOf
+		drafting:UcoType ,
+		gufo:AbstractIndividualType
+		;
+	rdfs:seeAlso <https://github.com/ucoProject/UCO-Profile-gufo/pull/18#discussion_r3066676308> ;
+	.
+
 drafting:Bearing
 	a
 		gufo:Kind ,
@@ -378,6 +387,7 @@ uco-observable:MACAddressFacet
 	.
 
 uco-types:Hash
+	a drafting:AbstractIndividualType ;
 	rdfs:subClassOf gufo:AbstractIndividual ;
 	.
 
