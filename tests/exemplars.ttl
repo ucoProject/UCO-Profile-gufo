@@ -6,6 +6,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh-uco-gufo: <http://example.org/shapes/sh-uco-gufo/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
 @prefix uco-analysis: <https://ontology.unifiedcyberontology.org/uco/analysis/> .
@@ -208,6 +209,34 @@ kb:Relationship-2be6b54a-a051-499c-9dcd-63d17d813293
 	uco-core:kindOfRelationship "Contained_Within" ;
 	uco-core:source kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f ;
 	uco-core:target kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec ;
+	.
+
+kb:Technique-65f288f9-8ff0-417c-8459-c27dd5ce3866
+	a
+		drafting:Technique ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-action:Action ;
+	rdfs:seeAlso sh-uco-gufo:Technique-shape ;
+	.
+
+kb:Technique-7658ecca-bec7-4d67-baa9-49aeb83dd45b
+	a
+		drafting:Technique ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-action:Action ;
+	drafting:techniqueID "" ;
+	rdfs:seeAlso sh-uco-gufo:techniqueID-subjects-shape ;
+	.
+
+kb:UcoType-0abcbac0-cbbb-46a6-9cb0-a17d3b8d705b
+	a
+		drafting:UcoType ,
+		owl:Class
+		;
+	rdfs:subClassOf uco-core:UcoThing ;
+	rdfs:seeAlso sh-uco-gufo:UcoType-shape ;
 	.
 
 kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc
