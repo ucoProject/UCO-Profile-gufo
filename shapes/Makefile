@@ -74,7 +74,8 @@ clean:
 	@rm -f \
 	  .*.done.log \
 	  _* \
-	  catalog-v001.xml
+	  catalog-v001.xml \
+	  generated-*
 
 generated-dependencies.ttl: \
   $(generated_dependencies_ttls) \
