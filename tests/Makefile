@@ -38,6 +38,7 @@ all: \
 
 .pytest.done.log: \
   $(test_pys) \
+  $(top_srcdir)/ontology/generated-local.ttl \
   $(top_srcdir)/ontology/generated-ontology.ttl \
   exemplars.ttl
 	source $(top_srcdir)/venv/bin/activate \
