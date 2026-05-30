@@ -74,7 +74,8 @@ clean:
 	@rm -f \
 	  .*.done.log \
 	  _* \
-	  catalog-v001.xml
+	  catalog-v001.xml \
+	  generated-*
 
 generated-dependencies.ttl: \
   $(generated_dependencies_ttls) \
@@ -98,11 +99,13 @@ generated-dependencies.ttl: \
 
 generated-local.ttl: \
   $(top_srcdir)/.venv.done.log \
-  $(ttl_basenames)
+  $(ttl_basenames) \
+  .empty.ttl
 	source $(top_srcdir)/venv/bin/activate \
 	  && rdfpipe \
 	    --output-format turtle \
 	    $(ttl_basenames) \
+	    .empty.ttl \
 	    > _$@
 	mv _$@ $@
 
