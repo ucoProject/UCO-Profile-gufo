@@ -99,7 +99,8 @@ generated-dependencies.ttl: \
 
 generated-local.ttl: \
   $(top_srcdir)/.venv.done.log \
-  $(ttl_basenames)
+  $(ttl_basenames) \
+  .empty.ttl
 	source $(top_srcdir)/venv/bin/activate \
 	  && rdfpipe \
 	    --output-format turtle \
