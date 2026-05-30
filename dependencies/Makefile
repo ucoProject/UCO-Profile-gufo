@@ -21,7 +21,7 @@ PYTHON3 ?= python3
 uco_srcdir := UCO
 
 all: \
-  UCO/tests/uco_monolithic.ttl
+  $(uco_srcdir)/tests/uco_monolithic.ttl
 
 $(uco_srcdir)/.venv.done.log:
 	$(MAKE) \
