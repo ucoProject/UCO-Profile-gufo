@@ -6,6 +6,7 @@
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
 @prefix sh-uco-gufo: <http://example.org/shapes/sh-uco-gufo/> .
 @prefix time: <http://www.w3.org/2006/time#> .
 @prefix uco-action: <https://ontology.unifiedcyberontology.org/uco/action/> .
@@ -21,6 +22,7 @@
 	a owl:Ontology ;
 	rdfs:comment "This knowledge base instantiates each of the mapped classes and properties, so SHACL shapes can perform a review for inconsistencies in the mapping between UCO and the mapped ontology."@en ;
 	owl:imports <http://example.org/ontology/uco-gufo> ;
+	sh:shapesGraph <http://example.org/shapes/sh-uco-gufo> ;
 	.
 
 kb:AbstractIndividualType-658cf3ca-f7fb-41d7-a1a3-3d13811a119c
