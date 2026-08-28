@@ -96,6 +96,10 @@ kb:Camera-1c9a2999-b34c-459b-b983-113c7b9e71df
 	rdfs:comment "A digital, non-phone camera."@en ;
 	.
 
+kb:Capability-43ebd04e-fe00-4167-9592-40bb86d37b81
+	a drafting:Capability ;
+	.
+
 kb:ContentData-0571dfb7-889e-4e8c-bec7-47a62ab9286f
 	a uco-observable:ContentData ;
 	.

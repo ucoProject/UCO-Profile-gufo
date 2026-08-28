@@ -50,6 +50,23 @@ drafting:Bearing
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/567> ;
 	.
 
+drafting:Capability
+	a
+		gufo:Kind ,
+		owl:Class
+		;
+	rdfs:subClassOf
+		gufo:IntrinsicMode ,
+		uco-core:UcoObject
+		;
+	rdfs:comment
+		"Beverly et al. 2024 (ontocom-2.pdf) describes a class 'Capability' within the BFO framework.  Within gUFO, restrictions noted in the paper section 4 on material entities are not present for Aspects, so a Capability under gUFO IntrinsicMode may inhere in non-physical things, such as software."@en ,
+		"Capability is initially assumed to be a gufo:Kind."@en
+		;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/682> ;
+	rdfs:seeAlso <https://ceur-ws.org/Vol-3882/ontocom-2.pdf> ;
+	.
+
 drafting:Endurant
 	a owl:Class ;
 	rdfs:subClassOf
