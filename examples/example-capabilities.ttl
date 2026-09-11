@@ -80,5 +80,6 @@ kb:SoftwareCapabilityToReadSQLiteFiles
 obo:MF_0000047
 	rdfs:label "capability to play violin"@en ;
 	rdfs:isDefinedBy <http://purl.obolibrary.org/obo/MF/2025-07-08/MF.owl> ;
+	rdfs:seeAlso <https://github.com/jannahastings/mental-functioning-ontology> ;
 	.
 
