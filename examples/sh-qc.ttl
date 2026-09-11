@@ -1,4 +1,5 @@
 @prefix drafting: <http://example.org/ontology/drafting/> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
 @prefix obo: <http://purl.obolibrary.org/obo/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -10,5 +11,18 @@
 <http://example.org/shapes/sh-qc>
 	a owl:Ontology ;
 	rdfs:comment "Shapes in this graph are scoped to quality control for illustrative example data graphs."@en ;
+	.
+
+sh-qc:Aspect-inheresIn-shape
+	a sh:PropertyShape ;
+	sh:minCount "1"^^xsd:integer ;
+	sh:path gufo:inheresIn ;
+	.
+
+sh-qc:Aspect-shape
+	a sh:NodeShape ;
+	rdfs:comment "This shape requires every aspect to inhere in a designated individual."@en ;
+	sh:property sh-qc:Aspect-inheresIn-shape ;
+	sh:targetClass gufo:Aspect ;
 	.
 
