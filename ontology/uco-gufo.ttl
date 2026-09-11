@@ -57,7 +57,7 @@ drafting:Capability
 		;
 	rdfs:subClassOf
 		gufo:IntrinsicMode ,
-		uco-core:UcoObject
+		uco-core:UcoInherentCharacterizationThing
 		;
 	rdfs:comment
 		"Beverly et al. 2024 (ontocom-2.pdf) describes a class 'Capability' within the BFO framework.  Within gUFO, restrictions noted in the paper section 4 on material entities are not present for Aspects, so a Capability under gUFO IntrinsicMode may inhere in non-physical things, such as software."@en ,
