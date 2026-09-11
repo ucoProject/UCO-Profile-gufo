@@ -140,6 +140,15 @@ drafting:Quality
 	rdfs:seeAlso <https://github.com/ucoProject/UCO/issues/535> ;
 	.
 
+drafting:SoftwareCapability
+	a
+		gufo:SubKind ,
+		owl:Class
+		;
+	rdfs:subClassOf drafting:Capability ;
+	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/682> ;
+	.
+
 drafting:SpecificFacetType
 	a owl:Class ;
 	rdfs:subClassOf

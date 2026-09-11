@@ -226,6 +226,10 @@ kb:Relationship-2be6b54a-a051-499c-9dcd-63d17d813293
 	uco-core:target kb:ContentData-3f13e43a-a3f4-4dcc-8db2-e934b24890ec ;
 	.
 
+kb:SoftwareCapability-4ae3ef26-dc80-44c2-a840-095d637c6df1
+	a drafting:SoftwareCapability ;
+	.
+
 kb:Technique-65f288f9-8ff0-417c-8459-c27dd5ce3866
 	a
 		drafting:Technique ,
