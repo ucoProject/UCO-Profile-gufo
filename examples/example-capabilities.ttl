@@ -1,0 +1,85 @@
+# imports: http://example.org/ontology/uco-gufo
+
+@prefix drafting: <http://example.org/ontology/drafting/> .
+@prefix gufo: <http://purl.org/nemo/gufo#> .
+@prefix kb: <http://example.org/kb/> .
+@prefix obo: <http://purl.obolibrary.org/obo/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix uco-identity: <https://ontology.unifiedcyberontology.org/uco/identity/> .
+@prefix uco-observable: <https://ontology.unifiedcyberontology.org/uco/observable/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<http://example.org/kb>
+	a owl:Ontology ;
+	rdfs:comment "This data graph demonstrates a capability to read SQLite files, as held by a person and separately held by a software project."@en ;
+	rdfs:seeAlso
+		kb:Capability-a0691ee6-1157-4c8c-b4be-f683206cb085 ,
+		kb:Capability-ee7cbf65-4ed9-45e3-a307-15db4952dbca ,
+		kb:Capability-f62b45e9-7148-4b61-8347-6ec568e2ae8a ,
+		kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07 ,
+		kb:Software-a4101726-2690-4f87-9776-acc8018324b5
+		;
+	owl:imports <http://example.org/ontology/uco-gufo> ;
+	sh:shapesGraph <http://example.org/shapes/sh-uco-gufo> ;
+	.
+
+kb:Capability-a0691ee6-1157-4c8c-b4be-f683206cb085
+	a kb:SoftwareCapabilityToReadSQLiteFiles ;
+	rdfs:label "The capability of Tool X to read SQLite files"@en ;
+	gufo:inheresIn kb:Software-a4101726-2690-4f87-9776-acc8018324b5 ;
+	.
+
+kb:Capability-ee7cbf65-4ed9-45e3-a307-15db4952dbca
+	a kb:CapabilityToPlayViolin ;
+	rdfs:label "The capability of Person 1 to play violin"@en ;
+	gufo:inheresIn kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07 ;
+	.
+
+kb:Capability-f62b45e9-7148-4b61-8347-6ec568e2ae8a
+	a kb:CapabilityToReadSQLiteFiles ;
+	rdfs:label "The capability of Person 1 to read SQLite files"@en ;
+	gufo:inheresIn kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07 ;
+	.
+
+kb:CapabilityToPlayViolin
+	a owl:Class ;
+	rdfs:subClassOf drafting:Capability ;
+	rdfs:label "capability to play violin"@en ;
+	rdfs:comment "Class notion borrowed from Mental Functioning ontology.  No hierarchy link asserted due to different foundations."@en ;
+	rdfs:seeAlso obo:MF_0000047 ;
+	.
+
+kb:CapabilityToReadSQLiteFiles
+	a owl:Class ;
+	rdfs:subClassOf drafting:Capability ;
+	rdfs:label "capability to read SQLite files"@en ;
+	.
+
+kb:Person-7b2972ab-8c12-4239-919d-afd5e5388b07
+	a uco-identity:Person ;
+	rdfs:label "Person 1"@en ;
+	.
+
+kb:Software-a4101726-2690-4f87-9776-acc8018324b5
+	a
+		gufo:FunctionalComplex ,
+		uco-observable:Software
+		;
+	rdfs:label "Tool X"@en ;
+	.
+
+kb:SoftwareCapabilityToReadSQLiteFiles
+	a owl:Class ;
+	rdfs:subClassOf kb:CapabilityToReadSQLiteFiles ;
+	rdfs:label "software capability to read SQLite files"@en ;
+	.
+
+obo:MF_0000047
+	rdfs:label "capability to play violin"@en ;
+	rdfs:isDefinedBy <http://purl.obolibrary.org/obo/MF/2025-07-08/MF.owl> ;
+	rdfs:seeAlso <https://github.com/jannahastings/mental-functioning-ontology> ;
+	.
+
