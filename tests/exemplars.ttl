@@ -232,30 +232,10 @@ kb:SoftwareCapability-4ae3ef26-dc80-44c2-a840-095d637c6df1
 
 kb:Technique-65f288f9-8ff0-417c-8459-c27dd5ce3866
 	a
-		drafting:Technique ,
-		owl:Class
+		owl:Class ,
+		uco-action:Technique
 		;
 	rdfs:subClassOf uco-action:Action ;
-	rdfs:seeAlso sh-uco-gufo:Technique-shape ;
-	.
-
-kb:Technique-7658ecca-bec7-4d67-baa9-49aeb83dd45b
-	a
-		drafting:Technique ,
-		owl:Class
-		;
-	rdfs:subClassOf uco-action:Action ;
-	drafting:techniqueID "" ;
-	rdfs:seeAlso sh-uco-gufo:techniqueID-subjects-shape ;
-	.
-
-kb:UcoType-0abcbac0-cbbb-46a6-9cb0-a17d3b8d705b
-	a
-		drafting:UcoType ,
-		owl:Class
-		;
-	rdfs:subClassOf uco-core:UcoThing ;
-	rdfs:seeAlso sh-uco-gufo:UcoType-shape ;
 	.
 
 kb:Vehicle-c7e910e8-4bed-473e-ad74-3df3eb63cbcc

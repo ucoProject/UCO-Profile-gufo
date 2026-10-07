@@ -27,8 +27,8 @@
 drafting:AbstractIndividualType
 	a owl:Class ;
 	rdfs:subClassOf
-		drafting:UcoType ,
-		gufo:AbstractIndividualType
+		gufo:AbstractIndividualType ,
+		uco-core:UcoType
 		;
 	rdfs:seeAlso <https://github.com/ucoProject/UCO-Profile-gufo/pull/18#discussion_r3066676308> ;
 	.
@@ -157,22 +157,6 @@ drafting:SpecificFacetType
 		;
 	.
 
-drafting:Technique
-	a owl:Class ;
-	rdfs:subClassOf
-		drafting:UcoType ,
-		gufo:EventType
-		;
-	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/666> ;
-	.
-
-drafting:UcoType
-	a owl:Class ;
-	rdfs:subClassOf gufo:Type ;
-	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/666> ;
-	owl:disjointWith uco-core:UcoThing ;
-	.
-
 drafting:Vehicle
 	a owl:Class ;
 	rdfs:subClassOf uco-observable:Device ;
@@ -229,17 +213,15 @@ drafting:isBearerOf
 	owl:inverseOf gufo:inheresIn ;
 	.
 
-drafting:techniqueID
-	a owl:DatatypeProperty ;
-	rdfs:domain drafting:Technique ;
-	rdfs:isDefinedBy <https://github.com/ucoProject/UCO/issues/666> ;
-	.
-
 uco-action:Action
 	rdfs:subClassOf
 		drafting:Perdurant ,
 		gufo:Event
 		;
+	.
+
+uco-action:Technique
+	rdfs:subClassOf gufo:EventType ;
 	.
 
 uco-action:endTime
@@ -332,8 +314,8 @@ uco-core:UcoObject
 	owl:disjointWith drafting:FacetType ;
 	.
 
-uco-core:UcoThing
-	owl:disjointWith drafting:UcoType ;
+uco-core:UcoType
+	rdfs:subClassOf gufo:Type ;
 	.
 
 uco-core:endTime
